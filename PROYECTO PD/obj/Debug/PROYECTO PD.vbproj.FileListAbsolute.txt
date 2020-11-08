@@ -11,3 +11,4 @@ C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.vbproj.C
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.exe
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.xml
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.pdb
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmLogin.resources
