@@ -1,0 +1,13 @@
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\bin\Debug\PROYECTO PD.exe.config
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\bin\Debug\PROYECTO PD.exe
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\bin\Debug\PROYECTO PD.pdb
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\bin\Debug\PROYECTO PD.xml
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.vbprojAssemblyReference.cache
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmConfiguracion.resources
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.FrmPrincipal.resources
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.Resources.resources
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.vbproj.GenerateResource.cache
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.vbproj.CoreCompileInputs.cache
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.exe
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.xml
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.pdb
