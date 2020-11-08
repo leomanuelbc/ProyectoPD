@@ -8,7 +8,7 @@ Module ConectarBD
     Public tabla As New DataTable
 
     Public nombre As String
-    Public usuario As String
+    Public Tipousuario As String
     Public tipo As String
 
     Public Sub establecerConexion()

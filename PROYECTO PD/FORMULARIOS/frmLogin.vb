@@ -10,6 +10,12 @@ Public Class frmLogin
                 tabla.Clear()
                 adaptador.Fill(tabla)
                 If tabla.Rows.Count = 1 Then
+                    Dim fila As DataRow = tabla.Rows(0)
+                    nombre = Trim(fila("NombreCompleto").ToString)
+                    Tipousuario = Trim(fila("TipoUsuario").ToString)
+
+                    FrmPrincipal.ToolStripStatusLabel1.Text = nombre
+                    FrmPrincipal.ToolStripStatusLabel3.Text = Tipousuario
                     MsgBox("Datos Verificados", vbInformation, "Operacion Completada")
                     UsernameTextBox.Text = ""
                     PasswordTextBox.Text = ""
@@ -20,6 +26,7 @@ Public Class frmLogin
                     UsernameTextBox.Text = ""
                     PasswordTextBox.Text = ""
                 End If
+                conexion.Close()
             Catch ex As Exception
                 MsgBox(ex.Message, vbCritical, "Error")
             End Try
