@@ -2,7 +2,8 @@
 Public Class frmUsuarios
     Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call desactivarControles()
-
+        Call llenarDatos()
+        dgvUsuarios.AutoGenerateColumns = False
     End Sub
     Sub desactivarControles()
         btnGuardar.Enabled = False
@@ -70,6 +71,18 @@ Public Class frmUsuarios
             MsgBox("Registro Completado", vbInformation, "Sistema")
         End If
     End Sub
+    Sub llenarDatos()
+        Dim sql As String
+        sql = "SELECT *FROM USUARIOS"
+        Try
+            adaptador = New SqlDataAdapter(sql, obtenerconexion)
+            adaptador.Fill(tabla)
+            dgvUsuarios.DataSource = tabla
+            lblTotalUsuarios.Text = tabla.Rows.Count
+        Catch ex As Exception
+            MsgBox("EL ERROR ES  " + ex.ToString, "SISTEMA")
+        End Try
+    End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         'Tambien puedeo solo poner el activar controles y asi llama al proceso no es necesario el call
         'pero lo dejo por que se ve mejor el llamar al proceso  
@@ -81,10 +94,36 @@ Public Class frmUsuarios
         Call insertar()
         Call desactivarControles()
         Call limpiarControles()
+        Call llenarDatos()
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Call desactivarControles()
         Call limpiarControles()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Call llenarDatos()
+
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Call llenarDatos()
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        If txtBuscar.Text = "" Then
+            llenarDatos()
+        End If
+        adaptador = New SqlDataAdapter("SELECT * FROM Usuarios where NombreCompleto Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+        tabla.Clear()
+        adaptador.Fill(tabla)
+        If tabla.Rows.Count > 0 Then
+
+            dgvUsuarios.DataSource = tabla
+            lblTotalUsuarios.Text = tabla.Rows.Count
+        Else
+            dgvUsuarios.DataSource = ""
+        End If
     End Sub
 End Class
