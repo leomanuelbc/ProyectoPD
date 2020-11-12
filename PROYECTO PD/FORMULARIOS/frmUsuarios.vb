@@ -40,6 +40,8 @@ Public Class frmUsuarios
         txtContraseña.Clear()
         cboTipoUser.Text = ""
         cboEstado.Text = ""
+        txtId.Text = ""
+        txtBuscar.Text = ""
     End Sub
     Sub insertar()
         Dim sql As String
@@ -75,6 +77,7 @@ Public Class frmUsuarios
         Dim sql As String
         sql = "SELECT *FROM USUARIOS"
         Try
+            Dim tabla As New DataTable
             adaptador = New SqlDataAdapter(sql, obtenerconexion)
             adaptador.Fill(tabla)
             dgvUsuarios.DataSource = tabla
@@ -82,6 +85,50 @@ Public Class frmUsuarios
         Catch ex As Exception
             MsgBox("EL ERROR ES  " + ex.ToString, "SISTEMA")
         End Try
+    End Sub
+    Sub editar()
+        Dim id As Integer
+        If txtId.Text = "" Then
+            MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
+        Else
+            Dim sql As String
+            sql = "UPDATE Usuarios Set NombreCompleto='" & txtnombre.Text & "', usuario='" & txtUsuario.Text &
+                "',Contraseña='" & txtContraseña.Text & "',TipoUsuario='" & cboTipoUser.Text & "',Estado='" &
+                cboEstado.Text & "' WHERE IdUsuario ='" & txtId.Text & "'"
+            Dim connet As New SqlConnection(obtenerconexion)
+            connet.Open()
+            Using comando As New SqlCommand(sql, connet)
+                id = comando.ExecuteScalar()
+
+            End Using
+            connet.Close()
+            MsgBox("Cambios Guardados", vbInformation, "Sistema")
+            Call limpiarControles()
+        End If
+    End Sub
+    Sub eliminar()
+        Dim id As Integer
+        If txtId.Text = "" Then
+            MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
+        Else
+            If MsgBox("Desea Eliminar a " + Trim(txtnombre.Text) + " De la Base de Datos", vbQuestion + vbYesNo, "Sistema") = vbNo Then
+                Call limpiarControles()
+                Call desactivarControles()
+                Exit Sub
+            Else
+
+                Dim sql As String
+                sql = "DELETE FROM Usuarios  WHERE IdUsuario ='" & Trim(txtId.Text) & "'"
+                Dim connet As New SqlConnection(obtenerconexion)
+                connet.Open()
+                Using comando As New SqlCommand(sql, connet)
+                    id = comando.ExecuteScalar()
+                End Using
+                connet.Close()
+                MsgBox("Cambios Guardados", vbInformation, "Sistema")
+                Call limpiarControles()
+            End If
+        End If
     End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         'Tambien puedeo solo poner el activar controles y asi llama al proceso no es necesario el call
@@ -103,11 +150,15 @@ Public Class frmUsuarios
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Call editar()
+        Call desactivarControles()
         Call llenarDatos()
 
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Call eliminar()
+        Call desactivarControles()
         Call llenarDatos()
     End Sub
 
@@ -125,5 +176,28 @@ Public Class frmUsuarios
         Else
             dgvUsuarios.DataSource = ""
         End If
+    End Sub
+    Private Sub dgvUsuarios_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellDoubleClick
+        On Error Resume Next
+        txtId.Text = CStr(dgvUsuarios.Item("IdUsuario", dgvUsuarios.CurrentCell.RowIndex).Value)
+        txtnombre.Text = CStr(dgvUsuarios.Item("NombreCompleto", dgvUsuarios.CurrentCell.RowIndex).Value)
+        txtUsuario.Text = CStr(dgvUsuarios.Item("usuario", dgvUsuarios.CurrentCell.RowIndex).Value)
+        txtContraseña.Text = CStr(dgvUsuarios.Item("Contraseña", dgvUsuarios.CurrentCell.RowIndex).Value)
+        cboTipoUser.Text = CStr(dgvUsuarios.Item("TipoUsuario", dgvUsuarios.CurrentCell.RowIndex).Value)
+        cboEstado.Text = CStr(dgvUsuarios.Item("Estado", dgvUsuarios.CurrentCell.RowIndex).Value)
+
+        BtnCancelar.Enabled = True
+        btnEditar.Enabled = True
+        btnEliminar.Enabled = True
+        btnNuevo.Enabled = False
+
+        txtnombre.Enabled = True
+        txtUsuario.Enabled = True
+        txtContraseña.Enabled = True
+        cboEstado.Enabled = True
+        cboTipoUser.Enabled = True
+        cboEstado.Enabled = True
+        txtContraseña.Focus()
+
     End Sub
 End Class

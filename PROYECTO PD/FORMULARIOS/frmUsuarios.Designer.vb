@@ -43,11 +43,12 @@ Partial Class frmUsuarios
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.IdUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.USUARIO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CONTRASEÑA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TIPOUSER = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +110,7 @@ Partial Class frmUsuarios
         Me.cboTipoUser.Name = "cboTipoUser"
         Me.cboTipoUser.Size = New System.Drawing.Size(159, 21)
         Me.cboTipoUser.TabIndex = 6
+        Me.cboTipoUser.TabStop = False
         '
         'Label4
         '
@@ -136,6 +138,7 @@ Partial Class frmUsuarios
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.Size = New System.Drawing.Size(159, 21)
         Me.cboEstado.TabIndex = 9
+        Me.cboEstado.TabStop = False
         '
         'btnNuevo
         '
@@ -234,7 +237,7 @@ Partial Class frmUsuarios
         Me.dgvUsuarios.AllowUserToAddRows = False
         Me.dgvUsuarios.AllowUserToDeleteRows = False
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.NOMBRE, Me.USUARIO, Me.CONTRASEÑA, Me.TIPOUSER, Me.ESTADO})
+        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdUsuario, Me.NombreCompleto, Me.USUARIO, Me.CONTRASEÑA, Me.TipoUsuario, Me.ESTADO})
         Me.dgvUsuarios.Location = New System.Drawing.Point(11, 51)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
@@ -243,21 +246,29 @@ Partial Class frmUsuarios
         Me.dgvUsuarios.Size = New System.Drawing.Size(427, 201)
         Me.dgvUsuarios.TabIndex = 0
         '
-        'ID
+        'txtId
         '
-        Me.ID.DataPropertyName = "IdUsuario"
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        Me.ID.Visible = False
+        Me.txtId.Location = New System.Drawing.Point(253, 56)
+        Me.txtId.Name = "txtId"
+        Me.txtId.Size = New System.Drawing.Size(69, 20)
+        Me.txtId.TabIndex = 16
+        Me.txtId.Visible = False
         '
-        'NOMBRE
+        'IdUsuario
         '
-        Me.NOMBRE.DataPropertyName = "NombreCompleto"
-        Me.NOMBRE.HeaderText = "NOMBRE COMPLETO"
-        Me.NOMBRE.Name = "NOMBRE"
-        Me.NOMBRE.ReadOnly = True
-        Me.NOMBRE.Width = 200
+        Me.IdUsuario.DataPropertyName = "IdUsuario"
+        Me.IdUsuario.HeaderText = "ID"
+        Me.IdUsuario.Name = "IdUsuario"
+        Me.IdUsuario.ReadOnly = True
+        Me.IdUsuario.Visible = False
+        '
+        'NombreCompleto
+        '
+        Me.NombreCompleto.DataPropertyName = "NombreCompleto"
+        Me.NombreCompleto.HeaderText = "NOMBRE COMPLETO"
+        Me.NombreCompleto.Name = "NombreCompleto"
+        Me.NombreCompleto.ReadOnly = True
+        Me.NombreCompleto.Width = 200
         '
         'USUARIO
         '
@@ -275,13 +286,13 @@ Partial Class frmUsuarios
         Me.CONTRASEÑA.ReadOnly = True
         Me.CONTRASEÑA.Width = 75
         '
-        'TIPOUSER
+        'TipoUsuario
         '
-        Me.TIPOUSER.DataPropertyName = "TipoUsuario"
-        Me.TIPOUSER.HeaderText = "TIPO DE USUARIO"
-        Me.TIPOUSER.Name = "TIPOUSER"
-        Me.TIPOUSER.ReadOnly = True
-        Me.TIPOUSER.Width = 80
+        Me.TipoUsuario.DataPropertyName = "TipoUsuario"
+        Me.TipoUsuario.HeaderText = "TIPO DE USUARIO"
+        Me.TipoUsuario.Name = "TipoUsuario"
+        Me.TipoUsuario.ReadOnly = True
+        Me.TipoUsuario.Width = 80
         '
         'ESTADO
         '
@@ -296,6 +307,7 @@ Partial Class frmUsuarios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 313)
+        Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.btnEliminar)
@@ -346,10 +358,11 @@ Partial Class frmUsuarios
     Friend WithEvents Label6 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents dgvUsuarios As DataGridView
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents NOMBRE As DataGridViewTextBoxColumn
+    Friend WithEvents txtId As TextBox
+    Friend WithEvents IdUsuario As DataGridViewTextBoxColumn
+    Friend WithEvents NombreCompleto As DataGridViewTextBoxColumn
     Friend WithEvents USUARIO As DataGridViewTextBoxColumn
     Friend WithEvents CONTRASEÑA As DataGridViewTextBoxColumn
-    Friend WithEvents TIPOUSER As DataGridViewTextBoxColumn
+    Friend WithEvents TipoUsuario As DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As DataGridViewTextBoxColumn
 End Class
