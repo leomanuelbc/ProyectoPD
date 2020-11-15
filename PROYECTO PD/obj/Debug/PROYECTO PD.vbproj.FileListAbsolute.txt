@@ -14,3 +14,4 @@ C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO PD.pdb
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmLogin.resources
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmUsuarios.resources
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmDepartamentos.resources
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmPuestosTrabajo.resources

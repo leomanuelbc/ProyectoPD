@@ -99,6 +99,12 @@
     <Compile Include="FORMULARIOS\FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMULARIOS\frmPuestosTrabajo.Designer.vb">
+      <DependentUpon>frmPuestosTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmPuestosTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmUsuarios.Designer.vb">
       <DependentUpon>frmUsuarios.vb</DependentUpon>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmPuestosTrabajo.resx">
+      <DependentUpon>frmPuestosTrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.vb</DependentUpon>

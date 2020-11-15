@@ -42,6 +42,7 @@ Partial Class frmDepartamentos
         Me.NombreD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtId = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvDepartamentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class frmDepartamentos
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 50)
+        Me.Label1.Location = New System.Drawing.Point(8, 50)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 13)
         Me.Label1.TabIndex = 0
@@ -58,14 +59,14 @@ Partial Class frmDepartamentos
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(88, 47)
+        Me.txtnombre.Location = New System.Drawing.Point(84, 47)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(286, 20)
         Me.txtnombre.TabIndex = 1
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(88, 82)
+        Me.txtdescripcion.Location = New System.Drawing.Point(84, 82)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(286, 60)
@@ -75,7 +76,7 @@ Partial Class frmDepartamentos
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(19, 82)
+        Me.Label2.Location = New System.Drawing.Point(15, 82)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 2
@@ -88,7 +89,7 @@ Partial Class frmDepartamentos
         Me.BtnCancelar.FlatAppearance.BorderSize = 8
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.Location = New System.Drawing.Point(483, 118)
+        Me.BtnCancelar.Location = New System.Drawing.Point(479, 118)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(85, 24)
         Me.BtnCancelar.TabIndex = 19
@@ -102,7 +103,7 @@ Partial Class frmDepartamentos
         Me.btnEliminar.FlatAppearance.BorderSize = 8
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Location = New System.Drawing.Point(483, 82)
+        Me.btnEliminar.Location = New System.Drawing.Point(479, 82)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(85, 24)
         Me.btnEliminar.TabIndex = 18
@@ -116,7 +117,7 @@ Partial Class frmDepartamentos
         Me.btnEditar.FlatAppearance.BorderSize = 8
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEditar.ForeColor = System.Drawing.Color.White
-        Me.btnEditar.Location = New System.Drawing.Point(392, 82)
+        Me.btnEditar.Location = New System.Drawing.Point(388, 82)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(85, 24)
         Me.btnEditar.TabIndex = 17
@@ -130,7 +131,7 @@ Partial Class frmDepartamentos
         Me.btnGuardar.FlatAppearance.BorderSize = 8
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(483, 44)
+        Me.btnGuardar.Location = New System.Drawing.Point(479, 44)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(85, 24)
         Me.btnGuardar.TabIndex = 16
@@ -145,7 +146,7 @@ Partial Class frmDepartamentos
         Me.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevo.Location = New System.Drawing.Point(392, 44)
+        Me.btnNuevo.Location = New System.Drawing.Point(388, 44)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(85, 24)
         Me.btnNuevo.TabIndex = 15
@@ -159,7 +160,7 @@ Partial Class frmDepartamentos
         Me.btnBuscar.FlatAppearance.BorderSize = 8
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(392, 118)
+        Me.btnBuscar.Location = New System.Drawing.Point(388, 118)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(85, 24)
         Me.btnBuscar.TabIndex = 20
@@ -174,7 +175,7 @@ Partial Class frmDepartamentos
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.dgvDepartamentos)
-        Me.Panel1.Location = New System.Drawing.Point(26, 153)
+        Me.Panel1.Location = New System.Drawing.Point(22, 153)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(540, 284)
         Me.Panel1.TabIndex = 21
@@ -256,10 +257,23 @@ Partial Class frmDepartamentos
         'txtId
         '
         Me.txtId.BackColor = System.Drawing.SystemColors.Window
-        Me.txtId.Location = New System.Drawing.Point(12, 122)
+        Me.txtId.Location = New System.Drawing.Point(36, 108)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(55, 20)
+        Me.txtId.Size = New System.Drawing.Size(10, 20)
         Me.txtId.TabIndex = 22
+        Me.txtId.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Adobe Gothic Std B", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(5, 9)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(319, 34)
+        Me.Label8.TabIndex = 23
+        Me.Label8.Text = "Registro Departamentos"
         '
         'frmDepartamentos
         '
@@ -267,6 +281,7 @@ Partial Class frmDepartamentos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Desktop
         Me.ClientSize = New System.Drawing.Size(576, 445)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnBuscar)
@@ -310,4 +325,5 @@ Partial Class frmDepartamentos
     Friend WithEvents IdDepartamento As DataGridViewTextBoxColumn
     Friend WithEvents NombreD As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionD As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
 End Class
