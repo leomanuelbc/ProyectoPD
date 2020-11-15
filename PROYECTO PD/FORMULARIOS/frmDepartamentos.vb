@@ -1,10 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class frmUsuarios
-    Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call desactivarControles()
-        Call llenarDatos()
-        dgvUsuarios.AutoGenerateColumns = False
-    End Sub
+Public Class frmDepartamentos
     Sub desactivarControles()
         btnGuardar.Enabled = False
         btnEditar.Enabled = False
@@ -12,10 +7,8 @@ Public Class frmUsuarios
         BtnCancelar.Enabled = False
 
         txtnombre.Enabled = False
-        txtContraseña.Enabled = False
-        txtUsuario.Enabled = False
-        cboTipoUser.Enabled = False
-        cboEstado.Enabled = False
+        txtdescripcion.Enabled = False
+
 
         btnNuevo.Enabled = True
     End Sub
@@ -26,20 +19,13 @@ Public Class frmUsuarios
         BtnCancelar.Enabled = True
 
         txtnombre.Enabled = True
-        txtContraseña.Enabled = True
-        txtUsuario.Enabled = True
-        cboTipoUser.Enabled = True
-        cboEstado.Enabled = True
+        txtdescripcion.Enabled = True
 
         btnNuevo.Enabled = False
     End Sub
     Sub limpiarControles()
         txtnombre.Text = ""
-        txtUsuario.Text = ""
-        'txtContraseña.Text = "" -- es lo mismo el clear lo dejamos para probar funcionalidades
-        txtContraseña.Clear()
-        cboTipoUser.Text = ""
-        cboEstado.Text = ""
+        txtdescripcion.Text = ""
         txtId.Text = ""
         txtBuscar.Text = ""
     End Sub
@@ -51,19 +37,19 @@ Public Class frmUsuarios
 
 
         End If
-        adaptador = New SqlDataAdapter("Select * from Usuarios where usuario ='" & txtUsuario.Text & "' ", obtenerconexion)
+        adaptador = New SqlDataAdapter("Select * from Departamentos where nombreD ='" & txtnombre.Text & "' ", obtenerconexion)
         tabla.Clear()
         adaptador.Fill(tabla)
         If tabla.Rows.Count > 0 Then
-            txtUsuario.Text = tabla.Rows(0).Item("Usuario")
+            txtnombre.Text = tabla.Rows(0).Item("NombreD")
             MsgBox("El Registro Ya Existe en la Base de Datos", vbInformation, "Sistema")
             Exit Sub
         End If
-        If txtnombre.Text = "" Or txtUsuario.Text = "" Or txtContraseña.Text = "" Or cboTipoUser.Text = "" Or cboEstado.Text = "" Then
+        If txtnombre.Text = "" Or txtdescripcion.Text = "" Then
             MsgBox("Existen Campos Vacios", vbInformation, "Sistema")
             Exit Sub
         Else
-            sql = "INSERT INTO Usuarios(NombreCompleto,Usuario,Contraseña,TipoUsuario,Estado) VALUES('" & txtnombre.Text & "','" & txtUsuario.Text & "','" & txtContraseña.Text & "','" & cboTipoUser.Text & "','" & cboEstado.Text & "')"
+            sql = "INSERT INTO Departamentos(NombreD,DescripcionD) VALUES('" & txtnombre.Text & "','" & txtdescripcion.Text & " ')"
             Dim conect As New SqlConnection(obtenerconexion)
             conect.Open()
             Using comando As New SqlCommand(sql, conect)
@@ -73,28 +59,14 @@ Public Class frmUsuarios
             MsgBox("Registro Completado", vbInformation, "Sistema")
         End If
     End Sub
-    Sub llenarDatos()
-        Dim sql As String
-        sql = "SELECT *FROM USUARIOS"
-        Try
-            Dim tabla As New DataTable
-            adaptador = New SqlDataAdapter(sql, obtenerconexion)
-            adaptador.Fill(tabla)
-            dgvUsuarios.DataSource = tabla
-            lblTotalUsuarios.Text = tabla.Rows.Count
-        Catch ex As Exception
-            MsgBox("EL ERROR ES  " + ex.ToString, "SISTEMA")
-        End Try
-    End Sub
     Sub editar()
         Dim id As Integer
         If txtId.Text = "" Then
             MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
         Else
             Dim sql As String
-            sql = "UPDATE Usuarios Set NombreCompleto='" & txtnombre.Text & "', usuario='" & txtUsuario.Text &
-                "',Contraseña='" & txtContraseña.Text & "',TipoUsuario='" & cboTipoUser.Text & "',Estado='" &
-                cboEstado.Text & "' WHERE IdUsuario ='" & txtId.Text & "'"
+            sql = "UPDATE Departamentos Set NombreD='" & txtnombre.Text & "', DescripcionD='" & txtdescripcion.Text &
+                "' WHERE IdDepartamento ='" & txtId.Text & "'"
             Dim connet As New SqlConnection(obtenerconexion)
             connet.Open()
             Using comando As New SqlCommand(sql, connet)
@@ -111,80 +83,114 @@ Public Class frmUsuarios
         If txtId.Text = "" Then
             MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
         Else
-            If MsgBox("Desea Eliminar a " + Trim(txtnombre.Text) + " De la Base de Datos", vbQuestion + vbYesNo, "Sistema") = vbNo Then
+            If MsgBox("Desea Eliminar el Departamento " + Trim(txtnombre.Text) + " De la Base de Datos", vbQuestion + vbYesNo, "Sistema") = vbNo Then
                 Call limpiarControles()
                 Call desactivarControles()
                 Exit Sub
             Else
 
                 Dim sql As String
-                sql = "DELETE FROM Usuarios  WHERE IdUsuario ='" & Trim(txtId.Text) & "'"
+                sql = "DELETE FROM Departamentos  WHERE IdDepartamento ='" & Trim(txtId.Text) & "'"
                 Dim connet As New SqlConnection(obtenerconexion)
                 connet.Open()
                 Using comando As New SqlCommand(sql, connet)
                     id = comando.ExecuteScalar()
                 End Using
                 connet.Close()
-                MsgBox("Cambios Guardados", vbInformation, "Sistema")
+                MsgBox("Registro Eliminado", vbInformation, "Sistema")
                 Call limpiarControles()
             End If
         End If
     End Sub
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        'Tambien puedeo solo poner el activar controles y asi llama al proceso no es necesario el call
-        'pero lo dejo por que se ve mejor el llamar al proceso  
-        Call activarControles()
-        Call limpiarControles()
+    Sub llenarDatos()
+        Dim sql As String
+        sql = "SELECT * FROM Departamentos"
+        Try
+            Dim tabla As New DataTable
+            adaptador = New SqlDataAdapter(sql, obtenerconexion)
+            adaptador.Fill(tabla)
+            dgvDepartamentos.DataSource = tabla
+            lblTotalDepartamentos.Text = tabla.Rows.Count
+        Catch ex As Exception
+            MsgBox("EL ERROR ES  " + ex.ToString, "SISTEMA")
+        End Try
     End Sub
-
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Call insertar()
+    Sub tamañoFormulario()
+        Width = 591
+        Height = 191
+        Panel1.Visible = False
+    End Sub
+    Sub tamañoFormulariobuscar()
+        Width = 592
+        Height = 484
+        Panel1.Visible = True
+        txtBuscar.Focus()
+        'txtBuscar.BackColor=DarkOrange
+    End Sub
+    Private Sub frmDepartamentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call desactivarControles()
-        Call limpiarControles()
+        Call tamañoFormulario()
         Call llenarDatos()
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
-        Call desactivarControles()
-        Call limpiarControles()
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        Call activarControles()
     End Sub
 
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
+        Call insertar()
+        Call llenarDatos()
+        Call desactivarControles()
+        Call limpiarControles()
+
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Call tamañoFormulariobuscar()
+        BtnCancelar.Enabled = True
+        btnBuscar.Enabled = False
+    End Sub
+
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        Call tamañoFormulario()
+        Call limpiarControles()
+        Call desactivarControles()
+        Panel1.Visible = False
+        BtnCancelar.Enabled = False
+        btnBuscar.Enabled = True
+    End Sub
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         Call editar()
         Call desactivarControles()
         Call llenarDatos()
-
     End Sub
-
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Call eliminar()
         Call desactivarControles()
         Call llenarDatos()
     End Sub
-
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         If txtBuscar.Text = "" Then
             llenarDatos()
         End If
-        adaptador = New SqlDataAdapter("SELECT * FROM Usuarios where NombreCompleto Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+        adaptador = New SqlDataAdapter("SELECT * FROM Departamentos where NombreD Like '%" & txtBuscar.Text & "%'", obtenerconexion)
         tabla.Clear()
         adaptador.Fill(tabla)
         If tabla.Rows.Count > 0 Then
 
-            dgvUsuarios.DataSource = tabla
-            lblTotalUsuarios.Text = tabla.Rows.Count
+            dgvDepartamentos.DataSource = tabla
+            lblTotalDepartamentos.Text = tabla.Rows.Count
         Else
-            dgvUsuarios.DataSource = ""
+            dgvDepartamentos.DataSource = ""
         End If
     End Sub
-    Private Sub dgvUsuarios_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellDoubleClick
+
+    Private Sub dgvDepartamentos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDepartamentos.CellDoubleClick
         On Error Resume Next
-        txtId.Text = CStr(dgvUsuarios.Item("IdUsuario", dgvUsuarios.CurrentCell.RowIndex).Value)
-        txtnombre.Text = CStr(dgvUsuarios.Item("NombreCompleto", dgvUsuarios.CurrentCell.RowIndex).Value)
-        txtUsuario.Text = CStr(dgvUsuarios.Item("usuario", dgvUsuarios.CurrentCell.RowIndex).Value)
-        txtContraseña.Text = CStr(dgvUsuarios.Item("Contraseña", dgvUsuarios.CurrentCell.RowIndex).Value)
-        cboTipoUser.Text = CStr(dgvUsuarios.Item("TipoUsuario", dgvUsuarios.CurrentCell.RowIndex).Value)
-        cboEstado.Text = CStr(dgvUsuarios.Item("Estado", dgvUsuarios.CurrentCell.RowIndex).Value)
+        txtId.Text = CStr(dgvDepartamentos.Item("IdDepartamento", dgvDepartamentos.CurrentCell.RowIndex).Value)
+        txtnombre.Text = CStr(dgvDepartamentos.Item("NombreD", dgvDepartamentos.CurrentCell.RowIndex).Value)
+        txtdescripcion.Text = CStr(dgvDepartamentos.Item("DescripcionD", dgvDepartamentos.CurrentCell.RowIndex).Value)
 
         BtnCancelar.Enabled = True
         btnEditar.Enabled = True
@@ -192,12 +198,9 @@ Public Class frmUsuarios
         btnNuevo.Enabled = False
 
         txtnombre.Enabled = True
-        txtUsuario.Enabled = True
-        txtContraseña.Enabled = True
-        cboEstado.Enabled = True
-        cboTipoUser.Enabled = True
-        cboEstado.Enabled = True
+        txtdescripcion.Enabled = True
         txtnombre.Focus()
-
     End Sub
+
+
 End Class

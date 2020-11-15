@@ -55,7 +55,6 @@ Module ConectarBD
             Else
                 miconexion = ("Data source=" & ip.Trim & "; Initial Catalog =" & bd.Trim & "; User Id =" & user.Trim & "; Password =" & pass.Trim & ";")
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
