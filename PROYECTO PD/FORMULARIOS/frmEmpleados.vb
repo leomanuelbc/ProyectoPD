@@ -90,8 +90,6 @@ Public Class frmEmpleados
         Dim id As Integer
         If MsgBox("Guardar Nuevo Registro", vbQuestion + vbYesNo, "Sistema") = vbNo Then
             Exit Sub
-
-
         End If
         adaptador = New SqlDataAdapter("Select * from Empleados where Identidad ='" & txtIdentidad.Text & "' ", obtenerconexion)
         tabla.Clear()
@@ -105,7 +103,7 @@ Public Class frmEmpleados
             MsgBox("Existen Campos Vacios", vbInformation, "Sistema")
             Exit Sub
         Else
-            sql = "INSERT INTO Empleados(Nokmbr,Usuario,Contraseña,TipoUsuario,Estado) VALUES('" & txtnombre.Text & "','" & txtUsuario.Text & "','" & txtContraseña.Text & "','" & cboTipoUser.Text & "','" & cboEstado.Text & "')"
+            sql = "INSERT INTO Empleados(Nombre,Identidad,Genero,Telefono,Correo,Direccion,IdPuesto,IdDepartamento) VALUES('" & txtNombreE.Text & "','" & txtIdentidad.Text & "','" & cboGenero.Text & "','" & txtTelefono.Text & "','" & txtCorreo.Text & "','" & txtDireccion.Text & "','" & txtCorreo.Text & "','" & Trim(cboPuesto.SelectedValue) & "','" & Trim(cboDepartamento.SelectedValue) & "')"
             Dim conect As New SqlConnection(obtenerconexion)
             conect.Open()
             Using comando As New SqlCommand(sql, conect)
@@ -130,8 +128,10 @@ Public Class frmEmpleados
         Call limpiarControles()
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Call insertar()
         Call desactivarControles()
         Call limpiarControles()
+
     End Sub
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Call desactivarControles()
