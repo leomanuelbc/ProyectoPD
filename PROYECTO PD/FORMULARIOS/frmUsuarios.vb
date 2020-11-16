@@ -3,7 +3,7 @@ Public Class frmUsuarios
     Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call desactivarControles()
         Call llenarDatos()
-        dgvUsuarios.AutoGenerateColumns = False
+        dgvUsuarios.AutoGenerateColumns = False 'para que no nos genere el atributos de la consulta cuando la generemos
     End Sub
     Sub desactivarControles()
         btnGuardar.Enabled = False

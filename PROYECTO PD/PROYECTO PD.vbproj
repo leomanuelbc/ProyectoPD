@@ -87,6 +87,12 @@
     <Compile Include="FORMULARIOS\frmDepartamentos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMULARIOS\frmEmpleados.Designer.vb">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmDepartamentos.resx">
       <DependentUpon>frmDepartamentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

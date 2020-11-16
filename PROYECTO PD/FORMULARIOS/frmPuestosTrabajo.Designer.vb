@@ -66,6 +66,7 @@ Partial Class frmPuestosTrabajo
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(28, 20)
         Me.txtId.TabIndex = 35
+        Me.txtId.Visible = False
         '
         'Panel1
         '
@@ -255,6 +256,7 @@ Partial Class frmPuestosTrabajo
         Me.IdPuestos.HeaderText = "ID"
         Me.IdPuestos.Name = "IdPuestos"
         Me.IdPuestos.ReadOnly = True
+        Me.IdPuestos.Visible = False
         Me.IdPuestos.Width = 5
         '
         'NombreP
