@@ -46,6 +46,9 @@ Partial Class frmEmpleados
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.rbDepartamento = New System.Windows.Forms.RadioButton()
+        Me.rbIdentidad = New System.Windows.Forms.RadioButton()
+        Me.rbNombreEmpleado = New System.Windows.Forms.RadioButton()
         Me.lblTotalEmpleados = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -60,9 +63,8 @@ Partial Class frmEmpleados
         Me.NombreD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DIRECCION = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rbNombreEmpleado = New System.Windows.Forms.RadioButton()
-        Me.rbIdentidad = New System.Windows.Forms.RadioButton()
-        Me.rbDepartamento = New System.Windows.Forms.RadioButton()
+        Me.btnDepartamento = New System.Windows.Forms.Button()
+        Me.btnPuesto = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -152,6 +154,7 @@ Partial Class frmEmpleados
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(18, 20)
         Me.txtId.TabIndex = 8
+        Me.txtId.Visible = False
         '
         'txtNombreE
         '
@@ -205,7 +208,7 @@ Partial Class frmEmpleados
         Me.cboPuesto.FormattingEnabled = True
         Me.cboPuesto.Location = New System.Drawing.Point(416, 158)
         Me.cboPuesto.Name = "cboPuesto"
-        Me.cboPuesto.Size = New System.Drawing.Size(162, 21)
+        Me.cboPuesto.Size = New System.Drawing.Size(129, 21)
         Me.cboPuesto.TabIndex = 15
         '
         'cboDepartamento
@@ -215,7 +218,7 @@ Partial Class frmEmpleados
         Me.cboDepartamento.FormattingEnabled = True
         Me.cboDepartamento.Location = New System.Drawing.Point(417, 122)
         Me.cboDepartamento.Name = "cboDepartamento"
-        Me.cboDepartamento.Size = New System.Drawing.Size(161, 21)
+        Me.cboDepartamento.Size = New System.Drawing.Size(128, 21)
         Me.cboDepartamento.TabIndex = 16
         '
         'btnBuscar
@@ -318,6 +321,39 @@ Partial Class frmEmpleados
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(742, 291)
         Me.Panel1.TabIndex = 40
+        '
+        'rbDepartamento
+        '
+        Me.rbDepartamento.AutoSize = True
+        Me.rbDepartamento.Location = New System.Drawing.Point(170, 20)
+        Me.rbDepartamento.Name = "rbDepartamento"
+        Me.rbDepartamento.Size = New System.Drawing.Size(92, 17)
+        Me.rbDepartamento.TabIndex = 7
+        Me.rbDepartamento.TabStop = True
+        Me.rbDepartamento.Text = "Departamento"
+        Me.rbDepartamento.UseVisualStyleBackColor = True
+        '
+        'rbIdentidad
+        '
+        Me.rbIdentidad.AutoSize = True
+        Me.rbIdentidad.Location = New System.Drawing.Point(95, 20)
+        Me.rbIdentidad.Name = "rbIdentidad"
+        Me.rbIdentidad.Size = New System.Drawing.Size(69, 17)
+        Me.rbIdentidad.TabIndex = 6
+        Me.rbIdentidad.TabStop = True
+        Me.rbIdentidad.Text = "Identidad"
+        Me.rbIdentidad.UseVisualStyleBackColor = True
+        '
+        'rbNombreEmpleado
+        '
+        Me.rbNombreEmpleado.AutoSize = True
+        Me.rbNombreEmpleado.Location = New System.Drawing.Point(19, 20)
+        Me.rbNombreEmpleado.Name = "rbNombreEmpleado"
+        Me.rbNombreEmpleado.Size = New System.Drawing.Size(72, 17)
+        Me.rbNombreEmpleado.TabIndex = 5
+        Me.rbNombreEmpleado.TabStop = True
+        Me.rbNombreEmpleado.Text = "Empleado"
+        Me.rbNombreEmpleado.UseVisualStyleBackColor = True
         '
         'lblTotalEmpleados
         '
@@ -437,38 +473,33 @@ Partial Class frmEmpleados
         Me.DIRECCION.ReadOnly = True
         Me.DIRECCION.Width = 90
         '
-        'rbNombreEmpleado
+        'btnDepartamento
         '
-        Me.rbNombreEmpleado.AutoSize = True
-        Me.rbNombreEmpleado.Location = New System.Drawing.Point(19, 20)
-        Me.rbNombreEmpleado.Name = "rbNombreEmpleado"
-        Me.rbNombreEmpleado.Size = New System.Drawing.Size(72, 17)
-        Me.rbNombreEmpleado.TabIndex = 5
-        Me.rbNombreEmpleado.TabStop = True
-        Me.rbNombreEmpleado.Text = "Empleado"
-        Me.rbNombreEmpleado.UseVisualStyleBackColor = True
+        Me.btnDepartamento.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnDepartamento.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnDepartamento.FlatAppearance.BorderSize = 8
+        Me.btnDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDepartamento.ForeColor = System.Drawing.Color.White
+        Me.btnDepartamento.Location = New System.Drawing.Point(551, 122)
+        Me.btnDepartamento.Name = "btnDepartamento"
+        Me.btnDepartamento.Size = New System.Drawing.Size(37, 21)
+        Me.btnDepartamento.TabIndex = 41
+        Me.btnDepartamento.Text = "..."
+        Me.btnDepartamento.UseVisualStyleBackColor = False
         '
-        'rbIdentidad
+        'btnPuesto
         '
-        Me.rbIdentidad.AutoSize = True
-        Me.rbIdentidad.Location = New System.Drawing.Point(95, 20)
-        Me.rbIdentidad.Name = "rbIdentidad"
-        Me.rbIdentidad.Size = New System.Drawing.Size(69, 17)
-        Me.rbIdentidad.TabIndex = 6
-        Me.rbIdentidad.TabStop = True
-        Me.rbIdentidad.Text = "Identidad"
-        Me.rbIdentidad.UseVisualStyleBackColor = True
-        '
-        'rbDepartamento
-        '
-        Me.rbDepartamento.AutoSize = True
-        Me.rbDepartamento.Location = New System.Drawing.Point(170, 20)
-        Me.rbDepartamento.Name = "rbDepartamento"
-        Me.rbDepartamento.Size = New System.Drawing.Size(92, 17)
-        Me.rbDepartamento.TabIndex = 7
-        Me.rbDepartamento.TabStop = True
-        Me.rbDepartamento.Text = "Departamento"
-        Me.rbDepartamento.UseVisualStyleBackColor = True
+        Me.btnPuesto.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnPuesto.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnPuesto.FlatAppearance.BorderSize = 8
+        Me.btnPuesto.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPuesto.ForeColor = System.Drawing.Color.White
+        Me.btnPuesto.Location = New System.Drawing.Point(551, 158)
+        Me.btnPuesto.Name = "btnPuesto"
+        Me.btnPuesto.Size = New System.Drawing.Size(37, 21)
+        Me.btnPuesto.TabIndex = 42
+        Me.btnPuesto.Text = "..."
+        Me.btnPuesto.UseVisualStyleBackColor = False
         '
         'frmEmpleados
         '
@@ -476,6 +507,8 @@ Partial Class frmEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Desktop
         Me.ClientSize = New System.Drawing.Size(774, 488)
+        Me.Controls.Add(Me.btnPuesto)
+        Me.Controls.Add(Me.btnDepartamento)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.BtnCancelar)
@@ -551,4 +584,6 @@ Partial Class frmEmpleados
     Friend WithEvents rbDepartamento As RadioButton
     Friend WithEvents rbIdentidad As RadioButton
     Friend WithEvents rbNombreEmpleado As RadioButton
+    Friend WithEvents btnDepartamento As Button
+    Friend WithEvents btnPuesto As Button
 End Class

@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class frmEmpleados
-    'AUTOCOMPLETEMODE  SuggestAppend 
-    'AUTO COMPLETE SOURS    ListItems
-    'Para Filtrar Datos Cuando tenga Mucha Informacion 
+    'AUTOCOMPLETE MODE  SuggestAppend 
+    'AUTOCOMPLETE SOURS    ListItems
+    'Para Filtrar Datos Cuando tenga Mucha Informacion Linea 3 y 4 Cbo y txt
     Private tabla_Departamentos As New DataTable
     Private tabla_Puestos As New DataTable
     Public Function DepartamentoListar(activo As Integer) As DataTable
@@ -185,6 +185,53 @@ Public Class frmEmpleados
             MsgBox("EL ERROR ES  " + ex.ToString, vbInformation, "SISTEMA")
         End Try
     End Sub
+    Sub editar()
+        Dim id As Integer
+        If txtId.Text = "" Then
+            MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
+        Else
+            Dim sql As String
+            sql = "UPDATE Empleados Set Nombre='" & txtNombreE.Text & "', Identidad='" & txtIdentidad.Text &
+                                     "',Genero='" & cboGenero.Text & "',Telefono='" & txtTelefono.Text &
+                                     "',Correo='" & txtCorreo.Text & "',Direccion='" & txtDireccion.Text &
+                                     "',IdDepartamento='" & Trim(cboDepartamento.SelectedValue) &
+                                     "',idPuesto='" & Trim(cboPuesto.SelectedValue) &
+                                     "' WHERE IdUsuario ='" & txtId.Text & "'"
+            Dim connet As New SqlConnection(obtenerconexion)
+            connet.Open()
+            Using comando As New SqlCommand(sql, connet)
+                id = comando.ExecuteScalar()
+
+            End Using
+            connet.Close()
+            MsgBox("Cambios Guardados", vbInformation, "Sistema")
+            Call limpiarControles()
+        End If
+    End Sub
+    Sub Eliminar()
+        Dim id As Integer
+        If txtId.Text = "" Then
+            MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
+        Else
+            If MsgBox("Desea Eliminar a " + Trim(txtNombreE.Text) + " De la Base de Datos", vbQuestion + vbYesNo, "Sistema") = vbNo Then
+                Call limpiarControles()
+                Call desactivarControles()
+                Exit Sub
+            Else
+
+                Dim sql As String
+                sql = "DELETE FROM Empleados  WHERE IdEmpleado ='" & Trim(txtId.Text) & "'"
+                Dim connet As New SqlConnection(obtenerconexion)
+                connet.Open()
+                Using comando As New SqlCommand(sql, connet)
+                    id = comando.ExecuteScalar()
+                End Using
+                connet.Close()
+                MsgBox("Cambios Guardados", vbInformation, "Sistema")
+                Call limpiarControles()
+            End If
+        End If
+    End Sub
     Private Sub frmEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call desactivarControles()
         Call llenarDatos()
@@ -201,8 +248,10 @@ Public Class frmEmpleados
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Call insertar()
+        Call llenarDatos()
         Call desactivarControles()
         Call limpiarControles()
+
 
     End Sub
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -223,6 +272,54 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub rbDepartamento_CheckedChanged(sender As Object, e As EventArgs) Handles rbDepartamento.CheckedChanged
-        txtBuscar.Focus()
+        txtBuscar.Focus() ' seleciona el txt objeto para Comenzar a escribir en el
+    End Sub
+
+    Private Sub dgvEmpleados_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmpleados.CellDoubleClick
+        On Error Resume Next
+        txtId.Text = CStr(dgvEmpleados.Item("IdEmpleado", dgvEmpleados.CurrentCell.RowIndex).Value)
+        txtNombreE.Text = CStr(dgvEmpleados.Item("Nombre", dgvEmpleados.CurrentCell.RowIndex).Value)
+        txtIdentidad.Text = CStr(dgvEmpleados.Item("Identidad", dgvEmpleados.CurrentCell.RowIndex).Value)
+        cboGenero.Text = CStr(dgvEmpleados.Item("Genero", dgvEmpleados.CurrentCell.RowIndex).Value)
+        txtTelefono.Text = CStr(dgvEmpleados.Item("Telefono", dgvEmpleados.CurrentCell.RowIndex).Value)
+        txtCorreo.Text = CStr(dgvEmpleados.Item("Correo", dgvEmpleados.CurrentCell.RowIndex).Value)
+        txtDireccion.Text = CStr(dgvEmpleados.Item("Direccion", dgvEmpleados.CurrentCell.RowIndex).Value)
+        cboDepartamento.Text = CStr(dgvEmpleados.Item("NombreD", dgvEmpleados.CurrentCell.RowIndex).Value)
+        cboPuesto.Text = CStr(dgvEmpleados.Item("NombreP", dgvEmpleados.CurrentCell.RowIndex).Value)
+
+        BtnCancelar.Enabled = True
+        btnEditar.Enabled = True
+        btnEliminar.Enabled = True
+        btnNuevo.Enabled = False
+
+        txtNombreE.Enabled = True
+        txtIdentidad.Enabled = True
+        cboGenero.Enabled = True
+        txtTelefono.Enabled = True
+        txtCorreo.Enabled = True
+        txtDireccion.Enabled = True
+        cboDepartamento.Enabled = True
+        cboPuesto.Enabled = True
+        txtNombreE.Focus()
+
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Call editar()
+        Call desactivarControles()
+        Call llenarDatos()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Call Eliminar()
+        Call desactivarControles()
+        Call llenarDatos()
+    End Sub
+
+    Private Sub btnDepartamento_Click(sender As Object, e As EventArgs) Handles btnDepartamento.Click
+        frmDepartamentos.ShowDialog() 'Abre el Formulario y hasta que no se Cierre no dejara usar el Frm Anterior
+    End Sub
+    Private Sub btnPuesto_Click(sender As Object, e As EventArgs) Handles btnPuesto.Click
+        frmPuestosTrabajo.ShowDialog() 'Abre el Formulario y hasta que no se Cierre no dejara usar el Frm Anterior
     End Sub
 End Class
