@@ -8,7 +8,7 @@ Module ConectarBD
     Public tabla As New DataTable
 
     Public nombre As String
-    Public usuario As String
+    Public Tipousuario As String
     Public tipo As String
 
     Public Sub establecerConexion()
@@ -55,7 +55,6 @@ Module ConectarBD
             Else
                 miconexion = ("Data source=" & ip.Trim & "; Initial Catalog =" & bd.Trim & "; User Id =" & user.Trim & "; Password =" & pass.Trim & ";")
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

@@ -32,12 +32,14 @@ Partial Class frmConfiguracion
         Me.txtPa = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(27, 49)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(91, 19)
@@ -54,12 +56,15 @@ Partial Class frmConfiguracion
         '
         'btnConectar
         '
-        Me.btnConectar.Location = New System.Drawing.Point(59, 199)
+        Me.btnConectar.BackColor = System.Drawing.Color.Black
+        Me.btnConectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConectar.ForeColor = System.Drawing.Color.White
+        Me.btnConectar.Location = New System.Drawing.Point(48, 199)
         Me.btnConectar.Name = "btnConectar"
-        Me.btnConectar.Size = New System.Drawing.Size(77, 32)
+        Me.btnConectar.Size = New System.Drawing.Size(98, 32)
         Me.btnConectar.TabIndex = 2
         Me.btnConectar.Text = "&Conectar"
-        Me.btnConectar.UseVisualStyleBackColor = True
+        Me.btnConectar.UseVisualStyleBackColor = False
         '
         'txtBd
         '
@@ -73,6 +78,7 @@ Partial Class frmConfiguracion
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(27, 82)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 19)
@@ -91,6 +97,7 @@ Partial Class frmConfiguracion
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(27, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 19)
@@ -110,6 +117,7 @@ Partial Class frmConfiguracion
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(27, 148)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 19)
@@ -118,20 +126,37 @@ Partial Class frmConfiguracion
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(156, 199)
+        Me.btnCancelar.BackColor = System.Drawing.Color.Black
+        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.Location = New System.Drawing.Point(170, 199)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(77, 32)
+        Me.btnCancelar.Size = New System.Drawing.Size(100, 32)
         Me.btnCancelar.TabIndex = 9
         Me.btnCancelar.Text = "&Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Calisto MT", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(44, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(235, 24)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Configuracion Servidor"
         '
         'frmConfiguracion
         '
         Me.AcceptButton = Me.btnConectar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Black
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(311, 246)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.txtPa)
         Me.Controls.Add(Me.Label4)
@@ -143,7 +168,7 @@ Partial Class frmConfiguracion
         Me.Controls.Add(Me.txtIp)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmConfiguracion"
-        Me.Text = "Configuracion Servidor"
+        Me.Text = "Configuracion"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -159,4 +184,5 @@ Partial Class frmConfiguracion
     Friend WithEvents txtPa As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents Label5 As Label
 End Class

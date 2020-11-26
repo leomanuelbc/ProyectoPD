@@ -33,7 +33,6 @@ Public Class frmConfiguracion
         End Try
         btnCancelar.PerformClick()
     End Sub
-
     Private Sub frmConfiguracion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If File.Exists(Application.StartupPath + "\IP.txt ") Then
@@ -48,8 +47,6 @@ Public Class frmConfiguracion
             If File.Exists(Application.StartupPath + "\BD.txt ") Then
                 txtBd.Text = My.Computer.FileSystem.ReadAllText(Application.StartupPath + "\BD.txt ")
             End If
-
-
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try

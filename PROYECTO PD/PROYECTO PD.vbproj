@@ -81,6 +81,18 @@
       <DependentUpon>frmConfiguracion.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMULARIOS\frmDepartamentos.Designer.vb">
+      <DependentUpon>frmDepartamentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmDepartamentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmEmpleados.Designer.vb">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -91,6 +103,18 @@
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="FORMULARIOS\FrmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmPuestosTrabajo.Designer.vb">
+      <DependentUpon>frmPuestosTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmPuestosTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmUsuarios.Designer.vb">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -114,11 +138,23 @@
     <EmbeddedResource Include="FORMULARIOS\frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmDepartamentos.resx">
+      <DependentUpon>frmDepartamentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmPuestosTrabajo.resx">
+      <DependentUpon>frmPuestosTrabajo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
