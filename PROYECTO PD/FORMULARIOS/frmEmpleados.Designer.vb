@@ -51,9 +51,18 @@ Partial Class frmEmpleados
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
-        Me.IdPuestos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Identidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GENERO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TELEFONO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CORREO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DIRECCION = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rbNombreEmpleado = New System.Windows.Forms.RadioButton()
+        Me.rbIdentidad = New System.Windows.Forms.RadioButton()
+        Me.rbDepartamento = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,6 +70,7 @@ Partial Class frmEmpleados
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
         Me.Label1.Location = New System.Drawing.Point(17, 59)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
@@ -70,6 +80,7 @@ Partial Class frmEmpleados
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
         Me.Label2.Location = New System.Drawing.Point(359, 55)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 13)
@@ -88,6 +99,7 @@ Partial Class frmEmpleados
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Control
         Me.Label4.Location = New System.Drawing.Point(17, 89)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(42, 13)
@@ -97,6 +109,7 @@ Partial Class frmEmpleados
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.SystemColors.Control
         Me.Label5.Location = New System.Drawing.Point(17, 120)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
@@ -106,6 +119,7 @@ Partial Class frmEmpleados
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.Control
         Me.Label6.Location = New System.Drawing.Point(372, 91)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 13)
@@ -115,6 +129,7 @@ Partial Class frmEmpleados
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.SystemColors.Control
         Me.Label7.Location = New System.Drawing.Point(337, 125)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(74, 13)
@@ -124,6 +139,7 @@ Partial Class frmEmpleados
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.SystemColors.Control
         Me.Label8.Location = New System.Drawing.Point(370, 162)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(40, 13)
@@ -290,6 +306,9 @@ Partial Class frmEmpleados
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.rbDepartamento)
+        Me.Panel1.Controls.Add(Me.rbIdentidad)
+        Me.Panel1.Controls.Add(Me.rbNombreEmpleado)
         Me.Panel1.Controls.Add(Me.lblTotalEmpleados)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label10)
@@ -315,22 +334,22 @@ Partial Class frmEmpleados
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(11, 259)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(113, 13)
+        Me.Label9.Size = New System.Drawing.Size(124, 13)
         Me.Label9.TabIndex = 3
-        Me.Label9.Text = "Usuarios Registrados :"
+        Me.Label9.Text = "Empleados Registrados :"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(16, 20)
+        Me.Label10.Location = New System.Drawing.Point(11, 3)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(40, 13)
+        Me.Label10.Size = New System.Drawing.Size(59, 13)
         Me.Label10.TabIndex = 2
-        Me.Label10.Text = "Buscar"
+        Me.Label10.Text = "Buscar Por"
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(62, 17)
+        Me.txtBuscar.Location = New System.Drawing.Point(267, 17)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(456, 20)
         Me.txtBuscar.TabIndex = 1
@@ -340,23 +359,67 @@ Partial Class frmEmpleados
         Me.dgvEmpleados.AllowUserToAddRows = False
         Me.dgvEmpleados.AllowUserToDeleteRows = False
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPuestos, Me.NombreP, Me.DescripcionP})
+        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdEmpleado, Me.Nombre, Me.Identidad, Me.GENERO, Me.TELEFONO, Me.CORREO, Me.NombreD, Me.NombreP, Me.DIRECCION})
         Me.dgvEmpleados.Location = New System.Drawing.Point(19, 53)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.ReadOnly = True
         Me.dgvEmpleados.RowHeadersVisible = False
         Me.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvEmpleados.Size = New System.Drawing.Size(682, 201)
+        Me.dgvEmpleados.Size = New System.Drawing.Size(704, 201)
         Me.dgvEmpleados.TabIndex = 0
         '
-        'IdPuestos
+        'IdEmpleado
         '
-        Me.IdPuestos.DataPropertyName = "IdPuestos"
-        Me.IdPuestos.HeaderText = "ID"
-        Me.IdPuestos.Name = "IdPuestos"
-        Me.IdPuestos.ReadOnly = True
-        Me.IdPuestos.Visible = False
-        Me.IdPuestos.Width = 5
+        Me.IdEmpleado.DataPropertyName = "IdEmpleado"
+        Me.IdEmpleado.HeaderText = "ID"
+        Me.IdEmpleado.Name = "IdEmpleado"
+        Me.IdEmpleado.ReadOnly = True
+        Me.IdEmpleado.Visible = False
+        Me.IdEmpleado.Width = 5
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "NOMBRECOMPLETO"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 80
+        '
+        'Identidad
+        '
+        Me.Identidad.DataPropertyName = "Identidad"
+        Me.Identidad.HeaderText = "IDENTIDAD"
+        Me.Identidad.Name = "Identidad"
+        Me.Identidad.ReadOnly = True
+        '
+        'GENERO
+        '
+        Me.GENERO.DataPropertyName = "Genero"
+        Me.GENERO.HeaderText = "GENERO"
+        Me.GENERO.Name = "GENERO"
+        Me.GENERO.ReadOnly = True
+        Me.GENERO.Width = 60
+        '
+        'TELEFONO
+        '
+        Me.TELEFONO.DataPropertyName = "Telefono"
+        Me.TELEFONO.HeaderText = "TELEFONO"
+        Me.TELEFONO.Name = "TELEFONO"
+        Me.TELEFONO.ReadOnly = True
+        '
+        'CORREO
+        '
+        Me.CORREO.DataPropertyName = "Correo"
+        Me.CORREO.HeaderText = "CORREO"
+        Me.CORREO.Name = "CORREO"
+        Me.CORREO.ReadOnly = True
+        '
+        'NombreD
+        '
+        Me.NombreD.DataPropertyName = "NombreD"
+        Me.NombreD.HeaderText = "DEPARTAMENTO"
+        Me.NombreD.Name = "NombreD"
+        Me.NombreD.ReadOnly = True
         '
         'NombreP
         '
@@ -364,20 +427,54 @@ Partial Class frmEmpleados
         Me.NombreP.HeaderText = "PUESTO DE TRABAJO"
         Me.NombreP.Name = "NombreP"
         Me.NombreP.ReadOnly = True
-        Me.NombreP.Width = 250
+        Me.NombreP.Width = 80
         '
-        'DescripcionP
+        'DIRECCION
         '
-        Me.DescripcionP.DataPropertyName = "DescripcionP"
-        Me.DescripcionP.HeaderText = "DESCRIPCION"
-        Me.DescripcionP.Name = "DescripcionP"
-        Me.DescripcionP.ReadOnly = True
-        Me.DescripcionP.Width = 270
+        Me.DIRECCION.DataPropertyName = "Direccion"
+        Me.DIRECCION.HeaderText = "DIRECCION"
+        Me.DIRECCION.Name = "DIRECCION"
+        Me.DIRECCION.ReadOnly = True
+        Me.DIRECCION.Width = 90
+        '
+        'rbNombreEmpleado
+        '
+        Me.rbNombreEmpleado.AutoSize = True
+        Me.rbNombreEmpleado.Location = New System.Drawing.Point(19, 20)
+        Me.rbNombreEmpleado.Name = "rbNombreEmpleado"
+        Me.rbNombreEmpleado.Size = New System.Drawing.Size(72, 17)
+        Me.rbNombreEmpleado.TabIndex = 5
+        Me.rbNombreEmpleado.TabStop = True
+        Me.rbNombreEmpleado.Text = "Empleado"
+        Me.rbNombreEmpleado.UseVisualStyleBackColor = True
+        '
+        'rbIdentidad
+        '
+        Me.rbIdentidad.AutoSize = True
+        Me.rbIdentidad.Location = New System.Drawing.Point(95, 20)
+        Me.rbIdentidad.Name = "rbIdentidad"
+        Me.rbIdentidad.Size = New System.Drawing.Size(69, 17)
+        Me.rbIdentidad.TabIndex = 6
+        Me.rbIdentidad.TabStop = True
+        Me.rbIdentidad.Text = "Identidad"
+        Me.rbIdentidad.UseVisualStyleBackColor = True
+        '
+        'rbDepartamento
+        '
+        Me.rbDepartamento.AutoSize = True
+        Me.rbDepartamento.Location = New System.Drawing.Point(170, 20)
+        Me.rbDepartamento.Name = "rbDepartamento"
+        Me.rbDepartamento.Size = New System.Drawing.Size(92, 17)
+        Me.rbDepartamento.TabIndex = 7
+        Me.rbDepartamento.TabStop = True
+        Me.rbDepartamento.Text = "Departamento"
+        Me.rbDepartamento.UseVisualStyleBackColor = True
         '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Desktop
         Me.ClientSize = New System.Drawing.Size(774, 488)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnBuscar)
@@ -442,7 +539,16 @@ Partial Class frmEmpleados
     Friend WithEvents Label10 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents dgvEmpleados As DataGridView
-    Friend WithEvents IdPuestos As DataGridViewTextBoxColumn
+    Friend WithEvents IdEmpleado As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Identidad As DataGridViewTextBoxColumn
+    Friend WithEvents GENERO As DataGridViewTextBoxColumn
+    Friend WithEvents TELEFONO As DataGridViewTextBoxColumn
+    Friend WithEvents CORREO As DataGridViewTextBoxColumn
+    Friend WithEvents NombreD As DataGridViewTextBoxColumn
     Friend WithEvents NombreP As DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionP As DataGridViewTextBoxColumn
+    Friend WithEvents DIRECCION As DataGridViewTextBoxColumn
+    Friend WithEvents rbDepartamento As RadioButton
+    Friend WithEvents rbIdentidad As RadioButton
+    Friend WithEvents rbNombreEmpleado As RadioButton
 End Class

@@ -37,7 +37,63 @@ Public Class frmEmpleados
         cboPuesto.DisplayMember = "NombreP"
         cboPuesto.ValueMember = "IdPuestos"
     End Sub
+    Sub BuscarDatos()
+        If rbNombreEmpleado.Checked Then
+            If txtBuscar.Text = "" Then
+                llenarDatos()
+            End If
+            adaptador = New SqlDataAdapter("SELECT Empleados.IdEmpleado, Empleados.Nombre, Empleados.Identidad, 
+            Empleados.Genero,Empleados.Telefono,Empleados.Correo, Empleados.Direccion, Departamentos.NombreD,Puestos.NombreP 
+            FROM Departamentos INNER JOIN Empleados ON Departamentos.IdDepartamento = Empleados.IdDepartamento
+            INNER JOIN Puestos ON Empleados.IdPuesto = Puestos.IdPuestos where Empleados.Nombre Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+            tabla.Clear()
+            adaptador.Fill(tabla)
+            If tabla.Rows.Count > 0 Then
 
+                dgvEmpleados.DataSource = tabla
+                lblTotalEmpleados.Text = tabla.Rows.Count
+            Else
+                dgvEmpleados.DataSource = ""
+            End If
+        End If
+        If rbIdentidad.Checked Then
+            If txtBuscar.Text = "" Then
+                llenarDatos()
+            End If
+            adaptador = New SqlDataAdapter("SELECT Empleados.IdEmpleado, Empleados.Nombre, Empleados.Identidad, 
+            Empleados.Genero,Empleados.Telefono,Empleados.Correo, Empleados.Direccion, Departamentos.NombreD,Puestos.NombreP 
+            FROM Departamentos INNER JOIN Empleados ON Departamentos.IdDepartamento = Empleados.IdDepartamento
+            INNER JOIN Puestos ON Empleados.IdPuesto = Puestos.IdPuestos where Empleados.Identidad Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+            tabla.Clear()
+            adaptador.Fill(tabla)
+            If tabla.Rows.Count > 0 Then
+
+                dgvEmpleados.DataSource = tabla
+                lblTotalEmpleados.Text = tabla.Rows.Count
+            Else
+                dgvEmpleados.DataSource = ""
+            End If
+        End If
+        If rbDepartamento.Checked Then
+            If txtBuscar.Text = "" Then
+                llenarDatos()
+            End If
+            adaptador = New SqlDataAdapter("SELECT Empleados.IdEmpleado, Empleados.Nombre, Empleados.Identidad, 
+            Empleados.Genero,Empleados.Telefono,Empleados.Correo, Empleados.Direccion, Departamentos.NombreD,Puestos.NombreP 
+            FROM Departamentos INNER JOIN Empleados ON Departamentos.IdDepartamento = Empleados.IdDepartamento
+            INNER JOIN Puestos ON Empleados.IdPuesto = Puestos.IdPuestos where Departamentos.NombreD Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+            tabla.Clear()
+            adaptador.Fill(tabla)
+            If tabla.Rows.Count > 0 Then
+
+                dgvEmpleados.DataSource = tabla
+                lblTotalEmpleados.Text = tabla.Rows.Count
+            Else
+                dgvEmpleados.DataSource = ""
+            End If
+        End If
+
+    End Sub
     Sub desactivarControles()
         btnGuardar.Enabled = False
         btnEditar.Enabled = False
@@ -103,7 +159,7 @@ Public Class frmEmpleados
             MsgBox("Existen Campos Vacios", vbInformation, "Sistema")
             Exit Sub
         Else
-            sql = "INSERT INTO Empleados(Nombre,Identidad,Genero,Telefono,Correo,Direccion,IdPuesto,IdDepartamento) VALUES('" & txtNombreE.Text & "','" & txtIdentidad.Text & "','" & cboGenero.Text & "','" & txtTelefono.Text & "','" & txtCorreo.Text & "','" & txtDireccion.Text & "','" & txtCorreo.Text & "','" & Trim(cboPuesto.SelectedValue) & "','" & Trim(cboDepartamento.SelectedValue) & "')"
+            sql = "INSERT INTO Empleados(Nombre,Identidad,Genero,Telefono,Correo,Direccion,IdPuesto,IdDepartamento) VALUES('" & txtNombreE.Text & "','" & txtIdentidad.Text & "','" & cboGenero.Text & "','" & txtTelefono.Text & "','" & txtCorreo.Text & "','" & txtDireccion.Text & "','" & Trim(cboPuesto.SelectedValue) & "','" & Trim(cboDepartamento.SelectedValue) & "')"
             Dim conect As New SqlConnection(obtenerconexion)
             conect.Open()
             Using comando As New SqlCommand(sql, conect)
@@ -113,9 +169,25 @@ Public Class frmEmpleados
             MsgBox("Registro Completado", vbInformation, "Sistema")
         End If
     End Sub
+    Sub llenarDatos()
+        Dim sql As String
+        sql = "SELECT Empleados.IdEmpleado, Empleados.Nombre, Empleados.Identidad, 
+            Empleados.Genero,Empleados.Telefono,Empleados.Correo, Empleados.Direccion, Departamentos.NombreD,Puestos.NombreP 
+            FROM Departamentos INNER JOIN Empleados ON Departamentos.IdDepartamento = Empleados.IdDepartamento
+            INNER JOIN Puestos ON Empleados.IdPuesto = Puestos.IdPuestos"
+        Try
+            Dim tabla As New DataTable
+            adaptador = New SqlDataAdapter(sql, obtenerconexion)
+            adaptador.Fill(tabla)
+            dgvEmpleados.DataSource = tabla
+            lblTotalEmpleados.Text = tabla.Rows.Count
+        Catch ex As Exception
+            MsgBox("EL ERROR ES  " + ex.ToString, vbInformation, "SISTEMA")
+        End Try
+    End Sub
     Private Sub frmEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call desactivarControles()
-        'Call llenarDatos()
+        Call llenarDatos()
         dgvEmpleados.AutoGenerateColumns = False 'para que no nos genere el atributos de la consulta cuando la generemos
         MostrarDepartamentos()
         cboDepartamento.SelectedIndex = -1
@@ -136,5 +208,21 @@ Public Class frmEmpleados
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Call desactivarControles()
         Call limpiarControles()
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Call BuscarDatos()
+    End Sub
+
+    Private Sub rbNombreEmpleado_CheckedChanged(sender As Object, e As EventArgs) Handles rbNombreEmpleado.CheckedChanged
+        txtBuscar.Focus()
+    End Sub
+
+    Private Sub rbIdentidad_CheckedChanged(sender As Object, e As EventArgs) Handles rbIdentidad.CheckedChanged
+        txtBuscar.Focus()
+    End Sub
+
+    Private Sub rbDepartamento_CheckedChanged(sender As Object, e As EventArgs) Handles rbDepartamento.CheckedChanged
+        txtBuscar.Focus()
     End Sub
 End Class
