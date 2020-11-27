@@ -38,11 +38,11 @@ Partial Class frmDepartamentos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dgvDepartamentos = New System.Windows.Forms.DataGridView()
+        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.IdDepartamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionD = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtId = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvDepartamentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -229,31 +229,6 @@ Partial Class frmDepartamentos
         Me.dgvDepartamentos.Size = New System.Drawing.Size(507, 201)
         Me.dgvDepartamentos.TabIndex = 0
         '
-        'IdDepartamento
-        '
-        Me.IdDepartamento.DataPropertyName = "IdDepartamento"
-        Me.IdDepartamento.HeaderText = "ID"
-        Me.IdDepartamento.Name = "IdDepartamento"
-        Me.IdDepartamento.ReadOnly = True
-        Me.IdDepartamento.Visible = False
-        Me.IdDepartamento.Width = 5
-        '
-        'NombreD
-        '
-        Me.NombreD.DataPropertyName = "NombreD"
-        Me.NombreD.HeaderText = "NOMBRE DE PARTAMENTO"
-        Me.NombreD.Name = "NombreD"
-        Me.NombreD.ReadOnly = True
-        Me.NombreD.Width = 200
-        '
-        'DescripcionD
-        '
-        Me.DescripcionD.DataPropertyName = "DescripcionD"
-        Me.DescripcionD.HeaderText = "DESCRIPCION"
-        Me.DescripcionD.Name = "DescripcionD"
-        Me.DescripcionD.ReadOnly = True
-        Me.DescripcionD.Width = 303
-        '
         'txtId
         '
         Me.txtId.BackColor = System.Drawing.SystemColors.Window
@@ -274,6 +249,31 @@ Partial Class frmDepartamentos
         Me.Label8.Size = New System.Drawing.Size(319, 34)
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Registro Departamentos"
+        '
+        'IdDepartamento
+        '
+        Me.IdDepartamento.DataPropertyName = "IdDepartamento"
+        Me.IdDepartamento.HeaderText = "ID"
+        Me.IdDepartamento.Name = "IdDepartamento"
+        Me.IdDepartamento.ReadOnly = True
+        Me.IdDepartamento.Visible = False
+        Me.IdDepartamento.Width = 5
+        '
+        'NombreD
+        '
+        Me.NombreD.DataPropertyName = "NombreD"
+        Me.NombreD.HeaderText = "NOMBRE DEPARTAMENTOS"
+        Me.NombreD.Name = "NombreD"
+        Me.NombreD.ReadOnly = True
+        Me.NombreD.Width = 200
+        '
+        'DescripcionD
+        '
+        Me.DescripcionD.DataPropertyName = "DescripcionD"
+        Me.DescripcionD.HeaderText = "DESCRIPCION"
+        Me.DescripcionD.Name = "DescripcionD"
+        Me.DescripcionD.ReadOnly = True
+        Me.DescripcionD.Width = 303
         '
         'frmDepartamentos
         '
@@ -322,8 +322,8 @@ Partial Class frmDepartamentos
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents dgvDepartamentos As DataGridView
     Friend WithEvents txtId As TextBox
+    Friend WithEvents Label8 As Label
     Friend WithEvents IdDepartamento As DataGridViewTextBoxColumn
     Friend WithEvents NombreD As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionD As DataGridViewTextBoxColumn
-    Friend WithEvents Label8 As Label
 End Class

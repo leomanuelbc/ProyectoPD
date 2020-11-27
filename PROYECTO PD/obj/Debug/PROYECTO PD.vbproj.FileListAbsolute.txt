@@ -16,3 +16,4 @@ C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmUsuar
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmDepartamentos.resources
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmPuestosTrabajo.resources
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmEmpleados.resources
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmMarcas.resources

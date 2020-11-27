@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionBD\ConectarBD.vb" />
+    <Compile Include="FORMULARIOS\frmArticulos.Designer.vb">
+      <DependentUpon>frmArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmConfiguracion.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="FORMULARIOS\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmMarcas.Designer.vb">
+      <DependentUpon>frmMarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmMarcas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMULARIOS\FrmPrincipal.Designer.vb">
@@ -135,6 +147,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FORMULARIOS\frmArticulos.resx">
+      <DependentUpon>frmArticulos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.vb</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmMarcas.resx">
+      <DependentUpon>frmMarcas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
