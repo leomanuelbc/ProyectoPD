@@ -39,7 +39,6 @@ Partial Class frmEmpleados
         Me.cboGenero = New System.Windows.Forms.ComboBox()
         Me.cboPuesto = New System.Windows.Forms.ComboBox()
         Me.cboDepartamento = New System.Windows.Forms.ComboBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -73,7 +72,7 @@ Partial Class frmEmpleados
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(17, 59)
+        Me.Label1.Location = New System.Drawing.Point(17, 55)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 0
@@ -92,6 +91,7 @@ Partial Class frmEmpleados
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
         Me.Label3.Location = New System.Drawing.Point(171, 89)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
@@ -102,7 +102,7 @@ Partial Class frmEmpleados
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(17, 89)
+        Me.Label4.Location = New System.Drawing.Point(19, 91)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(42, 13)
         Me.Label4.TabIndex = 2
@@ -112,7 +112,7 @@ Partial Class frmEmpleados
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label5.Location = New System.Drawing.Point(17, 120)
+        Me.Label5.Location = New System.Drawing.Point(9, 123)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 5
@@ -221,20 +221,6 @@ Partial Class frmEmpleados
         Me.cboDepartamento.Size = New System.Drawing.Size(128, 21)
         Me.cboDepartamento.TabIndex = 16
         '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnBuscar.FlatAppearance.BorderSize = 8
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(594, 142)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(77, 37)
-        Me.btnBuscar.TabIndex = 39
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
         'BtnCancelar
         '
         Me.BtnCancelar.BackColor = System.Drawing.Color.DodgerBlue
@@ -242,7 +228,7 @@ Partial Class frmEmpleados
         Me.BtnCancelar.FlatAppearance.BorderSize = 8
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.Location = New System.Drawing.Point(685, 142)
+        Me.BtnCancelar.Location = New System.Drawing.Point(640, 139)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(77, 37)
         Me.BtnCancelar.TabIndex = 38
@@ -510,7 +496,6 @@ Partial Class frmEmpleados
         Me.Controls.Add(Me.btnPuesto)
         Me.Controls.Add(Me.btnDepartamento)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnEditar)
@@ -560,7 +545,6 @@ Partial Class frmEmpleados
     Friend WithEvents cboGenero As ComboBox
     Friend WithEvents cboPuesto As ComboBox
     Friend WithEvents cboDepartamento As ComboBox
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEditar As Button

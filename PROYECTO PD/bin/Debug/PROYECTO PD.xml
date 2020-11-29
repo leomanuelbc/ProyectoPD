@@ -22,5 +22,210 @@ PROYECTO PD
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:PROYECTO_PD.InventarioDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.ArticulosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.CargoActivosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.DepartamentosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.DescargosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.EmpleadosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.MarcaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.PuestosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.usuariosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.ArticulosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.CargoActivosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.DepartamentosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.DescargosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.EmpleadosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.MarcaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.PuestosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.usuariosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.ArticulosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.CargoActivosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.DepartamentosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.DescargosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.EmpleadosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.MarcaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.PuestosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSet.usuariosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.ArticulosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.CargoActivosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.DepartamentosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.DescargosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.EmpleadosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.MarcaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.PuestosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.usuariosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(PROYECTO_PD.InventarioDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(PROYECTO_PD.InventarioDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(PROYECTO_PD.InventarioDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager.UpdateAll(PROYECTO_PD.InventarioDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:PROYECTO_PD.InventarioDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>

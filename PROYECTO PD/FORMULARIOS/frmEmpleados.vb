@@ -232,6 +232,7 @@ Public Class frmEmpleados
             End If
         End If
     End Sub
+
     Private Sub frmEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call desactivarControles()
         Call llenarDatos()
@@ -321,5 +322,9 @@ Public Class frmEmpleados
     End Sub
     Private Sub btnPuesto_Click(sender As Object, e As EventArgs) Handles btnPuesto.Click
         frmPuestosTrabajo.ShowDialog() 'Abre el Formulario y hasta que no se Cierre no dejara usar el Frm Anterior
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) 
+
     End Sub
 End Class

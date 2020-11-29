@@ -80,6 +80,12 @@
     <Compile Include="FORMULARIOS\frmArticulos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMULARIOS\frmCargoActivos.Designer.vb">
+      <DependentUpon>frmCargoActivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmCargoActivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmConfiguracion.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,11 @@
     <Compile Include="FORMULARIOS\frmUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InventarioDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -149,6 +160,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FORMULARIOS\frmArticulos.resx">
       <DependentUpon>frmArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmCargoActivos.resx">
+      <DependentUpon>frmCargoActivos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.vb</DependentUpon>
@@ -182,6 +196,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="InventarioDataSet.xsc">
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InventarioDataSet.xss">
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

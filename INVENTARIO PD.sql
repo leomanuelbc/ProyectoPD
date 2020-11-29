@@ -45,7 +45,7 @@ DescripcionP Text,
 create table Articulos( 
 IdArticulo int Primary key Identity (1,1) not null ,
 NombreA varchar(50),
-NumeroSeriee varchar(50),
+NumeroSerie varchar(50),
 CodigoA varchar(50),
 IdMarca int,
 Modelo varchar(50),
