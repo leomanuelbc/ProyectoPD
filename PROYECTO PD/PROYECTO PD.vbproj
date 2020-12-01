@@ -80,6 +80,18 @@
     <Compile Include="FORMULARIOS\frmArticulos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMULARIOS\frmBusquedaArticulos.Designer.vb">
+      <DependentUpon>frmBusquedaArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmBusquedaArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmBusquedaEmpleados.Designer.vb">
+      <DependentUpon>frmBusquedaEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmBusquedaEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmCargoActivos.Designer.vb">
       <DependentUpon>frmCargoActivos.vb</DependentUpon>
     </Compile>
@@ -160,6 +172,12 @@
   <ItemGroup>
     <EmbeddedResource Include="FORMULARIOS\frmArticulos.resx">
       <DependentUpon>frmArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmBusquedaArticulos.resx">
+      <DependentUpon>frmBusquedaArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmBusquedaEmpleados.resx">
+      <DependentUpon>frmBusquedaEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmCargoActivos.resx">
       <DependentUpon>frmCargoActivos.vb</DependentUpon>

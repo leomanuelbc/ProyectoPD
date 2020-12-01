@@ -26,24 +26,28 @@ Partial Class frmCargoActivos
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnArticulo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.rbMarca = New System.Windows.Forms.RadioButton()
-        Me.rbCodigo = New System.Windows.Forms.RadioButton()
+        Me.rbDepartamento = New System.Windows.Forms.RadioButton()
+        Me.rbNombreEmpleado = New System.Windows.Forms.RadioButton()
+        Me.rbCodigoInventario = New System.Windows.Forms.RadioButton()
         Me.rbNombreArticulo = New System.Windows.Forms.RadioButton()
         Me.lblTotalCargosActivos = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.dgvCargosActivos = New System.Windows.Forms.DataGridView()
-        Me.IdArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdCargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumeroSerie = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoInventario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FECHACOMPRA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Identidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreD = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -110,8 +114,9 @@ Partial Class frmCargoActivos
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.rbMarca)
-        Me.Panel1.Controls.Add(Me.rbCodigo)
+        Me.Panel1.Controls.Add(Me.rbDepartamento)
+        Me.Panel1.Controls.Add(Me.rbNombreEmpleado)
+        Me.Panel1.Controls.Add(Me.rbCodigoInventario)
         Me.Panel1.Controls.Add(Me.rbNombreArticulo)
         Me.Panel1.Controls.Add(Me.lblTotalCargosActivos)
         Me.Panel1.Controls.Add(Me.Label9)
@@ -123,27 +128,38 @@ Partial Class frmCargoActivos
         Me.Panel1.Size = New System.Drawing.Size(854, 289)
         Me.Panel1.TabIndex = 91
         '
-        'rbMarca
+        'rbDepartamento
         '
-        Me.rbMarca.AutoSize = True
-        Me.rbMarca.Location = New System.Drawing.Point(220, 20)
-        Me.rbMarca.Name = "rbMarca"
-        Me.rbMarca.Size = New System.Drawing.Size(55, 17)
-        Me.rbMarca.TabIndex = 7
-        Me.rbMarca.TabStop = True
-        Me.rbMarca.Text = "Marca"
-        Me.rbMarca.UseVisualStyleBackColor = True
+        Me.rbDepartamento.AutoSize = True
+        Me.rbDepartamento.Location = New System.Drawing.Point(348, 20)
+        Me.rbDepartamento.Name = "rbDepartamento"
+        Me.rbDepartamento.Size = New System.Drawing.Size(92, 17)
+        Me.rbDepartamento.TabIndex = 8
+        Me.rbDepartamento.TabStop = True
+        Me.rbDepartamento.Text = "Departamento"
+        Me.rbDepartamento.UseVisualStyleBackColor = True
         '
-        'rbCodigo
+        'rbNombreEmpleado
         '
-        Me.rbCodigo.AutoSize = True
-        Me.rbCodigo.Location = New System.Drawing.Point(123, 20)
-        Me.rbCodigo.Name = "rbCodigo"
-        Me.rbCodigo.Size = New System.Drawing.Size(96, 17)
-        Me.rbCodigo.TabIndex = 6
-        Me.rbCodigo.TabStop = True
-        Me.rbCodigo.Text = "Codigo Articulo"
-        Me.rbCodigo.UseVisualStyleBackColor = True
+        Me.rbNombreEmpleado.AutoSize = True
+        Me.rbNombreEmpleado.Location = New System.Drawing.Point(230, 20)
+        Me.rbNombreEmpleado.Name = "rbNombreEmpleado"
+        Me.rbNombreEmpleado.Size = New System.Drawing.Size(112, 17)
+        Me.rbNombreEmpleado.TabIndex = 7
+        Me.rbNombreEmpleado.TabStop = True
+        Me.rbNombreEmpleado.Text = "Nombre Empleado"
+        Me.rbNombreEmpleado.UseVisualStyleBackColor = True
+        '
+        'rbCodigoInventario
+        '
+        Me.rbCodigoInventario.AutoSize = True
+        Me.rbCodigoInventario.Location = New System.Drawing.Point(123, 20)
+        Me.rbCodigoInventario.Name = "rbCodigoInventario"
+        Me.rbCodigoInventario.Size = New System.Drawing.Size(108, 17)
+        Me.rbCodigoInventario.TabIndex = 6
+        Me.rbCodigoInventario.TabStop = True
+        Me.rbCodigoInventario.Text = "Codigo Inventario"
+        Me.rbCodigoInventario.UseVisualStyleBackColor = True
         '
         'rbNombreArticulo
         '
@@ -171,9 +187,9 @@ Partial Class frmCargoActivos
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(11, 259)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(124, 13)
+        Me.Label9.Size = New System.Drawing.Size(107, 13)
         Me.Label9.TabIndex = 3
-        Me.Label9.Text = "Empleados Registrados :"
+        Me.Label9.Text = "Activos Registrados :"
         '
         'Label10
         '
@@ -186,9 +202,9 @@ Partial Class frmCargoActivos
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(287, 17)
+        Me.txtBuscar.Location = New System.Drawing.Point(453, 17)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(550, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(384, 20)
         Me.txtBuscar.TabIndex = 1
         '
         'dgvCargosActivos
@@ -196,7 +212,7 @@ Partial Class frmCargoActivos
         Me.dgvCargosActivos.AllowUserToAddRows = False
         Me.dgvCargosActivos.AllowUserToDeleteRows = False
         Me.dgvCargosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCargosActivos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdArticulo, Me.NombreA, Me.NumeroSerie, Me.CodigoA, Me.NombreM, Me.Modelo, Me.PrecioCompra, Me.EstadoArticulo, Me.FECHACOMPRA, Me.Descripcion})
+        Me.dgvCargosActivos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCargo, Me.NombreA, Me.CodigoInventario, Me.PrecioCompra, Me.Nombre, Me.Identidad, Me.NombreD, Me.FechaAsignacion, Me.Descripcion, Me.IdArticulo, Me.CodigoA, Me.IdEmpleado, Me.EstadoArticulo})
         Me.dgvCargosActivos.Location = New System.Drawing.Point(19, 53)
         Me.dgvCargosActivos.Name = "dgvCargosActivos"
         Me.dgvCargosActivos.ReadOnly = True
@@ -205,53 +221,30 @@ Partial Class frmCargoActivos
         Me.dgvCargosActivos.Size = New System.Drawing.Size(818, 201)
         Me.dgvCargosActivos.TabIndex = 0
         '
-        'IdArticulo
+        'IdCargo
         '
-        Me.IdArticulo.DataPropertyName = "IdArticulo"
-        Me.IdArticulo.HeaderText = "ID"
-        Me.IdArticulo.Name = "IdArticulo"
-        Me.IdArticulo.ReadOnly = True
-        Me.IdArticulo.Visible = False
-        Me.IdArticulo.Width = 5
+        Me.IdCargo.DataPropertyName = "IdCargo"
+        Me.IdCargo.HeaderText = "ID"
+        Me.IdCargo.Name = "IdCargo"
+        Me.IdCargo.ReadOnly = True
+        Me.IdCargo.Visible = False
+        Me.IdCargo.Width = 5
         '
         'NombreA
         '
         Me.NombreA.DataPropertyName = "NombreA"
-        Me.NombreA.HeaderText = "NOMBRE DEL ARTICULO"
+        Me.NombreA.HeaderText = "NOMBRE DEL ACTIVO"
         Me.NombreA.Name = "NombreA"
         Me.NombreA.ReadOnly = True
         Me.NombreA.Width = 120
         '
-        'NumeroSerie
+        'CodigoInventario
         '
-        Me.NumeroSerie.DataPropertyName = "NumeroSerie"
-        Me.NumeroSerie.HeaderText = "NRO SERIE"
-        Me.NumeroSerie.Name = "NumeroSerie"
-        Me.NumeroSerie.ReadOnly = True
-        '
-        'CodigoA
-        '
-        Me.CodigoA.DataPropertyName = "CodigoA"
-        Me.CodigoA.HeaderText = "CODIGO"
-        Me.CodigoA.Name = "CodigoA"
-        Me.CodigoA.ReadOnly = True
-        Me.CodigoA.Width = 60
-        '
-        'NombreM
-        '
-        Me.NombreM.DataPropertyName = "NombreM"
-        Me.NombreM.HeaderText = "MARCA"
-        Me.NombreM.Name = "NombreM"
-        Me.NombreM.ReadOnly = True
-        Me.NombreM.Width = 60
-        '
-        'Modelo
-        '
-        Me.Modelo.DataPropertyName = "Modelo"
-        Me.Modelo.HeaderText = "MODELO"
-        Me.Modelo.Name = "Modelo"
-        Me.Modelo.ReadOnly = True
-        Me.Modelo.Width = 60
+        Me.CodigoInventario.DataPropertyName = "CodigoInventario"
+        Me.CodigoInventario.HeaderText = "CODIGO INVENTARIO"
+        Me.CodigoInventario.Name = "CodigoInventario"
+        Me.CodigoInventario.ReadOnly = True
+        Me.CodigoInventario.Width = 80
         '
         'PrecioCompra
         '
@@ -259,22 +252,39 @@ Partial Class frmCargoActivos
         Me.PrecioCompra.HeaderText = "PRECIO COMPRA"
         Me.PrecioCompra.Name = "PrecioCompra"
         Me.PrecioCompra.ReadOnly = True
+        Me.PrecioCompra.Width = 80
         '
-        'EstadoArticulo
+        'Nombre
         '
-        Me.EstadoArticulo.DataPropertyName = "EstadoArticulo"
-        Me.EstadoArticulo.HeaderText = "ESTADO"
-        Me.EstadoArticulo.Name = "EstadoArticulo"
-        Me.EstadoArticulo.ReadOnly = True
-        Me.EstadoArticulo.Visible = False
-        Me.EstadoArticulo.Width = 80
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "NOMBRE EMPLEADO"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 120
         '
-        'FECHACOMPRA
+        'Identidad
         '
-        Me.FECHACOMPRA.DataPropertyName = "FECHACOMPRA"
-        Me.FECHACOMPRA.HeaderText = "FECHA COMPRA"
-        Me.FECHACOMPRA.Name = "FECHACOMPRA"
-        Me.FECHACOMPRA.ReadOnly = True
+        Me.Identidad.DataPropertyName = "Identidad"
+        Me.Identidad.HeaderText = "IDENTIDAD"
+        Me.Identidad.Name = "Identidad"
+        Me.Identidad.ReadOnly = True
+        Me.Identidad.Width = 80
+        '
+        'NombreD
+        '
+        Me.NombreD.DataPropertyName = "NombreD"
+        Me.NombreD.HeaderText = "DEPARTAMENTO"
+        Me.NombreD.Name = "NombreD"
+        Me.NombreD.ReadOnly = True
+        Me.NombreD.Width = 60
+        '
+        'FechaAsignacion
+        '
+        Me.FechaAsignacion.DataPropertyName = "FechaAsignacion"
+        Me.FechaAsignacion.HeaderText = "FECHA ASIGNACION"
+        Me.FechaAsignacion.Name = "FechaAsignacion"
+        Me.FechaAsignacion.ReadOnly = True
+        Me.FechaAsignacion.Width = 80
         '
         'Descripcion
         '
@@ -282,7 +292,38 @@ Partial Class frmCargoActivos
         Me.Descripcion.HeaderText = "DESCRIPCION"
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 170
+        Me.Descripcion.Width = 195
+        '
+        'IdArticulo
+        '
+        Me.IdArticulo.DataPropertyName = "IdArticulo"
+        Me.IdArticulo.HeaderText = "IDARTICULO"
+        Me.IdArticulo.Name = "IdArticulo"
+        Me.IdArticulo.ReadOnly = True
+        Me.IdArticulo.Visible = False
+        '
+        'CodigoA
+        '
+        Me.CodigoA.DataPropertyName = "CodigoA"
+        Me.CodigoA.HeaderText = "CODIGO ARTICULO"
+        Me.CodigoA.Name = "CodigoA"
+        Me.CodigoA.ReadOnly = True
+        '
+        'IdEmpleado
+        '
+        Me.IdEmpleado.DataPropertyName = "IdEmpleado"
+        Me.IdEmpleado.HeaderText = "IDEMPLEADO"
+        Me.IdEmpleado.Name = "IdEmpleado"
+        Me.IdEmpleado.ReadOnly = True
+        Me.IdEmpleado.Visible = False
+        '
+        'EstadoArticulo
+        '
+        Me.EstadoArticulo.DataPropertyName = "EstadoArticulo"
+        Me.EstadoArticulo.HeaderText = "ESTADO ARTICULO"
+        Me.EstadoArticulo.Name = "EstadoArticulo"
+        Me.EstadoArticulo.ReadOnly = True
+        Me.EstadoArticulo.Visible = False
         '
         'BtnCancelar
         '
@@ -410,6 +451,7 @@ Partial Class frmCargoActivos
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(18, 20)
         Me.txtId.TabIndex = 79
+        Me.txtId.Visible = False
         '
         'Label7
         '
@@ -531,6 +573,7 @@ Partial Class frmCargoActivos
         Me.txtIdEmpleado.Name = "txtIdEmpleado"
         Me.txtIdEmpleado.Size = New System.Drawing.Size(22, 20)
         Me.txtIdEmpleado.TabIndex = 102
+        Me.txtIdEmpleado.Visible = False
         '
         'txtIdArticulo
         '
@@ -538,6 +581,7 @@ Partial Class frmCargoActivos
         Me.txtIdArticulo.Name = "txtIdArticulo"
         Me.txtIdArticulo.Size = New System.Drawing.Size(22, 20)
         Me.txtIdArticulo.TabIndex = 103
+        Me.txtIdArticulo.Visible = False
         '
         'btnEmpleados
         '
@@ -604,24 +648,14 @@ Partial Class frmCargoActivos
     Friend WithEvents Label11 As Label
     Friend WithEvents btnArticulo As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents rbMarca As RadioButton
-    Friend WithEvents rbCodigo As RadioButton
+    Friend WithEvents rbNombreEmpleado As RadioButton
+    Friend WithEvents rbCodigoInventario As RadioButton
     Friend WithEvents rbNombreArticulo As RadioButton
     Friend WithEvents lblTotalCargosActivos As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents dgvCargosActivos As DataGridView
-    Friend WithEvents IdArticulo As DataGridViewTextBoxColumn
-    Friend WithEvents NombreA As DataGridViewTextBoxColumn
-    Friend WithEvents NumeroSerie As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoA As DataGridViewTextBoxColumn
-    Friend WithEvents NombreM As DataGridViewTextBoxColumn
-    Friend WithEvents Modelo As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioCompra As DataGridViewTextBoxColumn
-    Friend WithEvents EstadoArticulo As DataGridViewTextBoxColumn
-    Friend WithEvents FECHACOMPRA As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEditar As Button
@@ -649,4 +683,18 @@ Partial Class frmCargoActivos
     Friend WithEvents txtIdEmpleado As TextBox
     Friend WithEvents txtIdArticulo As TextBox
     Friend WithEvents btnEmpleados As Button
+    Friend WithEvents rbDepartamento As RadioButton
+    Friend WithEvents IdCargo As DataGridViewTextBoxColumn
+    Friend WithEvents NombreA As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoInventario As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioCompra As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Identidad As DataGridViewTextBoxColumn
+    Friend WithEvents NombreD As DataGridViewTextBoxColumn
+    Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents IdArticulo As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoA As DataGridViewTextBoxColumn
+    Friend WithEvents IdEmpleado As DataGridViewTextBoxColumn
+    Friend WithEvents EstadoArticulo As DataGridViewTextBoxColumn
 End Class

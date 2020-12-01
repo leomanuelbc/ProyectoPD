@@ -1,9 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Public Class frmCargoActivos
     Private Sub frmCargoActivos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgvCargosActivos.AutoGenerateColumns = False
         Call desactivarControles()
+        Call llenarDatos()
 
-        'Auto completar Caja texto con los datos de la base de Datos82.4
+        'Auto completar Caja texto con los datos de la base de Datos
         txtcodigo.AutoCompleteMode = AutoCompleteMode.Suggest
         txtcodigo.AutoCompleteSource = AutoCompleteSource.CustomSource
         txtcodigo.AutoCompleteCustomSource = obtenerCodigo()
@@ -108,11 +110,163 @@ Public Class frmCargoActivos
         Dim sql As String
         sql = "UPDATE Articulos Set EstadoArticulo='ENTREGADO' WHERE IdArticulo ='" & txtIdArticulo.Text & "';"
         Dim connet As New SqlConnection(obtenerconexion)
-            connet.Open()
-            Using comando As New SqlCommand(sql, connet)
+        connet.Open()
+        Using comando As New SqlCommand(sql, connet)
             id = comando.ExecuteScalar()
         End Using
         connet.Close()
+    End Sub
+    Sub modificarArticulosPENDIENTE()
+        Dim id As Integer
+        Dim sql As String
+        sql = "UPDATE Articulos Set EstadoArticulo='PENDIENTE' WHERE IdArticulo ='" & txtIdArticulo.Text & "';"
+        Dim connet As New SqlConnection(obtenerconexion)
+        connet.Open()
+        Using comando As New SqlCommand(sql, connet)
+            id = comando.ExecuteScalar()
+        End Using
+        connet.Close()
+    End Sub
+    Sub llenarDatos()
+        Dim sql As String
+        sql = "SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,
+                      Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Articulos.CodigoA,Articulos.EstadoArticulo,
+                      Empleados.Nombre,Empleados.Identidad,Empleados.IdEmpleado,Departamentos.NombreD 
+                      From Articulos INNER JOIN CargoActivos ON Articulos.IdArticulo = CargoActivos.IdArticulo
+                               INNER JOIN Empleados ON CargoActivos.IdEmpleado = Empleados.IdEmpleado
+                               INNER JOIN Departamentos ON empleados.IdDepartamento = Departamentos.IdDepartamento"
+        Try
+            Dim tabla As New DataTable
+            adaptador = New SqlDataAdapter(sql, obtenerconexion)
+            adaptador.Fill(tabla)
+            dgvCargosActivos.DataSource = tabla
+            lblTotalCargosActivos.Text = tabla.Rows.Count
+        Catch ex As Exception
+            MsgBox("EL ERROR ES  " + ex.ToString, vbInformation, "SISTEMA")
+        End Try
+    End Sub
+    Sub BuscarDatos()
+        If rbNombreArticulo.Checked Then
+            If txtBuscar.Text = "" Then
+                llenarDatos()
+            End If
+            adaptador = New SqlDataAdapter("SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Empleados.Nombre,Empleados.Identidad,Empleados.IdEmpleado,Departamentos.NombreD
+                From Articulos INNER JOIN CargoActivos ON Articulos.IdArticulo = CargoActivos.IdArticulo
+                               INNER JOIN Empleados ON CargoActivos.IdEmpleado = Empleados.IdEmpleado
+                               INNER JOIN Departamentos ON empleados.IdDepartamento = Departamentos.IdDepartamento 
+                                where Articulos.NombreA Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+            tabla.Clear()
+            adaptador.Fill(tabla)
+            If tabla.Rows.Count > 0 Then
+
+                dgvCargosActivos.DataSource = tabla
+                lblTotalCargosActivos.Text = tabla.Rows.Count
+            Else
+                dgvCargosActivos.DataSource = ""
+            End If
+        End If
+        If rbCodigoInventario.Checked Then
+            If txtBuscar.Text = "" Then
+                llenarDatos()
+            End If
+            adaptador = New SqlDataAdapter("SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Empleados.Nombre,Empleados.Identidad,Empleados.IdEmpleado,Departamentos.NombreD
+                From Articulos INNER JOIN CargoActivos ON Articulos.IdArticulo = CargoActivos.IdArticulo
+                               INNER JOIN Empleados ON CargoActivos.IdEmpleado = Empleados.IdEmpleado
+                               INNER JOIN Departamentos ON empleados.IdDepartamento = Departamentos.IdDepartamento 
+                               where CargoActivos.CodigoInventario Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+            tabla.Clear()
+            adaptador.Fill(tabla)
+            If tabla.Rows.Count > 0 Then
+
+                dgvCargosActivos.DataSource = tabla
+                lblTotalCargosActivos.Text = tabla.Rows.Count
+            Else
+                dgvCargosActivos.DataSource = ""
+            End If
+        End If
+        If rbNombreEmpleado.Checked Then
+            If txtBuscar.Text = "" Then
+                llenarDatos()
+            End If
+            adaptador = New SqlDataAdapter("SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Empleados.Nombre,Empleados.Identidad,Empleados.IdEmpleado,Departamentos.NombreD
+                From Articulos INNER JOIN CargoActivos ON Articulos.IdArticulo = CargoActivos.IdArticulo
+                               INNER JOIN Empleados ON CargoActivos.IdEmpleado = Empleados.IdEmpleado
+                               INNER JOIN Departamentos ON empleados.IdDepartamento = Departamentos.IdDepartamento 
+                               where Empleados.Nombre Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+            tabla.Clear()
+            adaptador.Fill(tabla)
+            If tabla.Rows.Count > 0 Then
+
+                dgvCargosActivos.DataSource = tabla
+                lblTotalCargosActivos.Text = tabla.Rows.Count
+            Else
+                dgvCargosActivos.DataSource = ""
+            End If
+        End If
+        If rbDepartamento.Checked Then
+            If txtBuscar.Text = "" Then
+                llenarDatos()
+            End If
+            adaptador = New SqlDataAdapter("SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Empleados.Nombre,Empleados.Identidad,Empleados.IdEmpleado,Departamentos.NombreD
+                From Articulos INNER JOIN CargoActivos ON Articulos.IdArticulo = CargoActivos.IdArticulo
+                               INNER JOIN Empleados ON CargoActivos.IdEmpleado = Empleados.IdEmpleado
+                               INNER JOIN Departamentos ON empleados.IdDepartamento = Departamentos.IdDepartamento 
+                               where Departamentos.NombreD Like '%" & txtBuscar.Text & "%'", obtenerconexion)
+            tabla.Clear()
+            adaptador.Fill(tabla)
+            If tabla.Rows.Count > 0 Then
+
+                dgvCargosActivos.DataSource = tabla
+                lblTotalCargosActivos.Text = tabla.Rows.Count
+            Else
+                dgvCargosActivos.DataSource = ""
+            End If
+        End If
+    End Sub
+    Sub editar()
+        Dim id As Integer
+        If txtId.Text = "" Then
+            MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
+        Else
+            Dim sql As String
+            sql = "UPDATE CargoActivos Set CodigoInventario='" & txtcodigo.Text & "', FechaAsignacion='" & dtpFechaEntrega.Text &
+                                     "',EstadoArticulo='" & Trim(cboEstado.Text) & "',Descripcion='" & txtDescripcion.Text &
+                                     "',idArticulo='" & txtIdArticulo.Text & "',IdEmpleado='" & txtIdEmpleado.Text &
+                                     "' WHERE IdCargo ='" & txtId.Text & "';"
+            Dim connet As New SqlConnection(obtenerconexion)
+            connet.Open()
+            Using comando As New SqlCommand(sql, connet)
+                id = comando.ExecuteScalar()
+            End Using
+            connet.Close()
+            MsgBox("Cambios Guardados", vbInformation, "Sistema")
+            Call limpiarControles()
+        End If
+    End Sub
+    Sub eliminar()
+        Dim id As Integer
+        If txtId.Text = "" Then
+            MsgBox("EXISTEN DATOS VACIOS", vbInformation, "Sistema")
+        Else
+            If MsgBox("Desea Eliminar el Activo " + Trim(txtNombreA.Text) + " De la Base de Datos", vbQuestion + vbYesNo, "Sistema") = vbNo Then
+                Call limpiarControles()
+                Call desactivarControles()
+                Exit Sub
+            Else
+
+                Dim sql As String
+                sql = "DELETE FROM Cargoactivos  WHERE IdCargo ='" & Trim(txtId.Text) & "'"
+                Dim connet As New SqlConnection(obtenerconexion)
+                connet.Open()
+                Using comando As New SqlCommand(sql, connet)
+                    id = comando.ExecuteScalar()
+                End Using
+                connet.Close()
+                Call modificarArticulo()
+                MsgBox("Cambios Guardados", vbInformation, "Sistema")
+                Call limpiarControles()
+            End If
+        End If
     End Sub
     Private Function obtenerCodigo() As AutoCompleteStringCollection
         adaptador = New SqlDataAdapter("Select CodigoA from Articulos where EstadoArticulo ='PENDIENTE'", obtenerconexion)
@@ -185,7 +339,72 @@ Public Class frmCargoActivos
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Call insertar()
+        Call llenarDatos()
         Call desactivarControles()
         Call limpiarControles()
+    End Sub
+    Private Sub btnArticulo_Click(sender As Object, e As EventArgs) Handles btnArticulo.Click
+        frmBusquedaArticulos.ShowDialog()
+    End Sub
+    Private Sub btnEmpleados_Click(sender As Object, e As EventArgs) Handles btnEmpleados.Click
+        frmBusquedaEmpleados.ShowDialog()
+    End Sub
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Call BuscarDatos()
+    End Sub
+
+    Private Sub dgvCargosActivos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCargosActivos.CellDoubleClick
+        On Error Resume Next
+        txtIdArticulo.Text = CStr(dgvCargosActivos.Item("IdArticulo", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtNombreA.Text = CStr(dgvCargosActivos.Item("NombreA", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtcodigo.Text = CStr(dgvCargosActivos.Item("CodigoA", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtPrecio.Text = CStr(dgvCargosActivos.Item("PrecioCompra", dgvCargosActivos.CurrentCell.RowIndex).Value)
+
+        txtIdEmpleado.Text = CStr(dgvCargosActivos.Item("IdEmpleado", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtNombreE.Text = CStr(dgvCargosActivos.Item("Nombre", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtIdentidad.Text = CStr(dgvCargosActivos.Item("Identidad", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtDepartamento.Text = CStr(dgvCargosActivos.Item("NombreD", dgvCargosActivos.CurrentCell.RowIndex).Value)
+
+        txtId.Text = CStr(dgvCargosActivos.Item("Idcargo", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtCodigoInventario.Text = CStr(dgvCargosActivos.Item("CodigoInventario", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        dtpFechaEntrega.Text = CStr(dgvCargosActivos.Item("FechaAsignacion", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        cboEstado.Text = CStr(dgvCargosActivos.Item("EstadoArticulo", dgvCargosActivos.CurrentCell.RowIndex).Value)
+        txtDescripcion.Text = CStr(dgvCargosActivos.Item("Descripcion", dgvCargosActivos.CurrentCell.RowIndex).Value)
+
+        BtnCancelar.Enabled = True
+        btnEditar.Enabled = True
+        btnEliminar.Enabled = True
+        btnNuevo.Enabled = False
+        btnArticulo.Enabled = True
+        btnEmpleados.Enabled = True
+
+        txtcodigo.Enabled = True
+        txtIdentidad.Enabled = True
+        txtCodigoInventario.Enabled = True
+        dtpFechaEntrega.Enabled = True
+        cboEstado.Enabled = True
+        txtPrecio.Enabled = True
+        txtDescripcion.Enabled = True
+        txtNombreA.Focus()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        If UCase(Tipousuario) = "ADMINISTRADOR" Then
+            Call editar()
+            Call desactivarControles()
+            Call llenarDatos()
+        Else
+            MsgBox("No Tiene Permisos Para Modificar la Informacion", vbInformation, "PRIVILEGIOS")
+        End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If UCase(Tipousuario) = "ADMINISTRADOR" Then
+            Call editar()
+            Call desactivarControles()
+            Call llenarDatos()
+        Else
+            MsgBox("No Tiene Permisos Para Modificar la Informacion", vbInformation, "PRIVILEGIOS")
+        End If
     End Sub
 End Class

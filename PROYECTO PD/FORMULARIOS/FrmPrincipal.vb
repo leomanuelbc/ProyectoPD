@@ -42,4 +42,12 @@ Public Class FrmPrincipal
             MsgBox("No Tiene Los Privilegios Para el Modulo Correspondiente", vbInformation, "Operacion Cancelada")
         End If
     End Sub
+
+    Private Sub EntregaActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntregaActivosToolStripMenuItem.Click
+        frmCargoActivos.Show()
+    End Sub
+
+    Private Sub RegistrarArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarArticulosToolStripMenuItem.Click
+        frmArticulos.Show()
+    End Sub
 End Class
