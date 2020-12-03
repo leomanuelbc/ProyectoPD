@@ -23,7 +23,7 @@ Partial Class frmDescargosActivos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.txtIdArticulo = New System.Windows.Forms.TextBox()
-        Me.txtIdEmpleado = New System.Windows.Forms.TextBox()
+        Me.txtIdCargo = New System.Windows.Forms.TextBox()
         Me.txtDepartamento = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtNombreE = New System.Windows.Forms.TextBox()
@@ -50,12 +50,11 @@ Partial Class frmDescargosActivos
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Identidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreD = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaDescargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.motivoDescargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -84,15 +83,13 @@ Partial Class frmDescargosActivos
         Me.txtIdArticulo.Name = "txtIdArticulo"
         Me.txtIdArticulo.Size = New System.Drawing.Size(22, 20)
         Me.txtIdArticulo.TabIndex = 134
-        Me.txtIdArticulo.Visible = False
         '
-        'txtIdEmpleado
+        'txtIdCargo
         '
-        Me.txtIdEmpleado.Location = New System.Drawing.Point(697, 87)
-        Me.txtIdEmpleado.Name = "txtIdEmpleado"
-        Me.txtIdEmpleado.Size = New System.Drawing.Size(22, 20)
-        Me.txtIdEmpleado.TabIndex = 133
-        Me.txtIdEmpleado.Visible = False
+        Me.txtIdCargo.Location = New System.Drawing.Point(697, 87)
+        Me.txtIdCargo.Name = "txtIdCargo"
+        Me.txtIdCargo.Size = New System.Drawing.Size(22, 20)
+        Me.txtIdCargo.TabIndex = 133
         '
         'txtDepartamento
         '
@@ -281,7 +278,7 @@ Partial Class frmDescargosActivos
         Me.dgvActivosDescargados.AllowUserToAddRows = False
         Me.dgvActivosDescargados.AllowUserToDeleteRows = False
         Me.dgvActivosDescargados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvActivosDescargados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCargo, Me.NombreA, Me.CodigoInventario, Me.PrecioCompra, Me.Nombre, Me.Identidad, Me.NombreD, Me.FechaAsignacion, Me.Descripcion, Me.IdArticulo, Me.CodigoA, Me.IdEmpleado, Me.EstadoArticulo})
+        Me.dgvActivosDescargados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCargo, Me.NombreA, Me.CodigoInventario, Me.PrecioCompra, Me.Nombre, Me.Identidad, Me.NombreD, Me.FechaDescargo, Me.motivoDescargo, Me.Descripcion, Me.IdArticulo, Me.IdEmpleado})
         Me.dgvActivosDescargados.Location = New System.Drawing.Point(19, 53)
         Me.dgvActivosDescargados.Name = "dgvActivosDescargados"
         Me.dgvActivosDescargados.ReadOnly = True
@@ -347,13 +344,20 @@ Partial Class frmDescargosActivos
         Me.NombreD.ReadOnly = True
         Me.NombreD.Width = 60
         '
-        'FechaAsignacion
+        'FechaDescargo
         '
-        Me.FechaAsignacion.DataPropertyName = "FechaAsignacion"
-        Me.FechaAsignacion.HeaderText = "FECHA ASIGNACION"
-        Me.FechaAsignacion.Name = "FechaAsignacion"
-        Me.FechaAsignacion.ReadOnly = True
-        Me.FechaAsignacion.Width = 80
+        Me.FechaDescargo.DataPropertyName = "FechaDescargo"
+        Me.FechaDescargo.HeaderText = "FECHA DESCARGO"
+        Me.FechaDescargo.Name = "FechaDescargo"
+        Me.FechaDescargo.ReadOnly = True
+        Me.FechaDescargo.Width = 80
+        '
+        'motivoDescargo
+        '
+        Me.motivoDescargo.DataPropertyName = "motivoDescargo"
+        Me.motivoDescargo.HeaderText = "MOTIVO DESCARGO"
+        Me.motivoDescargo.Name = "motivoDescargo"
+        Me.motivoDescargo.ReadOnly = True
         '
         'Descripcion
         '
@@ -371,13 +375,6 @@ Partial Class frmDescargosActivos
         Me.IdArticulo.ReadOnly = True
         Me.IdArticulo.Visible = False
         '
-        'CodigoA
-        '
-        Me.CodigoA.DataPropertyName = "CodigoA"
-        Me.CodigoA.HeaderText = "CODIGO ARTICULO"
-        Me.CodigoA.Name = "CodigoA"
-        Me.CodigoA.ReadOnly = True
-        '
         'IdEmpleado
         '
         Me.IdEmpleado.DataPropertyName = "IdEmpleado"
@@ -385,14 +382,6 @@ Partial Class frmDescargosActivos
         Me.IdEmpleado.Name = "IdEmpleado"
         Me.IdEmpleado.ReadOnly = True
         Me.IdEmpleado.Visible = False
-        '
-        'EstadoArticulo
-        '
-        Me.EstadoArticulo.DataPropertyName = "EstadoArticulo"
-        Me.EstadoArticulo.HeaderText = "ESTADO ARTICULO"
-        Me.EstadoArticulo.Name = "EstadoArticulo"
-        Me.EstadoArticulo.ReadOnly = True
-        Me.EstadoArticulo.Visible = False
         '
         'BtnCancelar
         '
@@ -513,7 +502,6 @@ Partial Class frmDescargosActivos
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(18, 20)
         Me.txtId.TabIndex = 111
-        Me.txtId.Visible = False
         '
         'Label7
         '
@@ -594,7 +582,7 @@ Partial Class frmDescargosActivos
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtIdArticulo)
-        Me.Controls.Add(Me.txtIdEmpleado)
+        Me.Controls.Add(Me.txtIdCargo)
         Me.Controls.Add(Me.txtDepartamento)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtNombreE)
@@ -632,7 +620,7 @@ Partial Class frmDescargosActivos
 
     End Sub
     Friend WithEvents txtIdArticulo As TextBox
-    Friend WithEvents txtIdEmpleado As TextBox
+    Friend WithEvents txtIdCargo As TextBox
     Friend WithEvents txtDepartamento As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents txtNombreE As TextBox
@@ -652,19 +640,6 @@ Partial Class frmDescargosActivos
     Friend WithEvents Label10 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents dgvActivosDescargados As DataGridView
-    Friend WithEvents IdCargo As DataGridViewTextBoxColumn
-    Friend WithEvents NombreA As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoInventario As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioCompra As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Identidad As DataGridViewTextBoxColumn
-    Friend WithEvents NombreD As DataGridViewTextBoxColumn
-    Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents IdArticulo As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoA As DataGridViewTextBoxColumn
-    Friend WithEvents IdEmpleado As DataGridViewTextBoxColumn
-    Friend WithEvents EstadoArticulo As DataGridViewTextBoxColumn
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEditar As Button
@@ -683,4 +658,16 @@ Partial Class frmDescargosActivos
     Friend WithEvents Label2 As Label
     Friend WithEvents dtpFechaDescargo As DateTimePicker
     Friend WithEvents Label3 As Label
+    Friend WithEvents IdCargo As DataGridViewTextBoxColumn
+    Friend WithEvents NombreA As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoInventario As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioCompra As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Identidad As DataGridViewTextBoxColumn
+    Friend WithEvents NombreD As DataGridViewTextBoxColumn
+    Friend WithEvents FechaDescargo As DataGridViewTextBoxColumn
+    Friend WithEvents motivoDescargo As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents IdArticulo As DataGridViewTextBoxColumn
+    Friend WithEvents IdEmpleado As DataGridViewTextBoxColumn
 End Class

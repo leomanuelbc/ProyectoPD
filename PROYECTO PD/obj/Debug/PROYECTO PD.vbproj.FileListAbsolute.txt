@@ -22,3 +22,4 @@ C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmCargo
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmBusquedaArticulos.resources
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmBusquedaEmpleados.resources
 C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.frmDescargosActivos.resources
+C:\Users\pc1\source\repos\PROYECTO PD\PROYECTO PD\obj\Debug\PROYECTO_PD.FrmBusquedaActivos.resources

@@ -80,6 +80,12 @@
     <Compile Include="FORMULARIOS\frmArticulos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FORMULARIOS\FrmBusquedaActivos.Designer.vb">
+      <DependentUpon>FrmBusquedaActivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FrmBusquedaActivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmBusquedaArticulos.Designer.vb">
       <DependentUpon>frmBusquedaArticulos.vb</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FORMULARIOS\frmArticulos.resx">
       <DependentUpon>frmArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FrmBusquedaActivos.resx">
+      <DependentUpon>FrmBusquedaActivos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmBusquedaArticulos.resx">
       <DependentUpon>frmBusquedaArticulos.vb</DependentUpon>

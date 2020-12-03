@@ -44,6 +44,7 @@ Partial Class FrmPrincipal
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntregaActivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -59,7 +60,7 @@ Partial Class FrmPrincipal
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.RegistrarArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DescargosArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -187,7 +188,7 @@ Partial Class FrmPrincipal
         '
         'ActivosToolStripMenuItem
         '
-        Me.ActivosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntregaActivosToolStripMenuItem, Me.RegistrarArticulosToolStripMenuItem})
+        Me.ActivosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntregaActivosToolStripMenuItem, Me.RegistrarArticulosToolStripMenuItem, Me.DescargosArticulosToolStripMenuItem})
         Me.ActivosToolStripMenuItem.Name = "ActivosToolStripMenuItem"
         Me.ActivosToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
         Me.ActivosToolStripMenuItem.Text = "Activos"
@@ -197,6 +198,12 @@ Partial Class FrmPrincipal
         Me.EntregaActivosToolStripMenuItem.Name = "EntregaActivosToolStripMenuItem"
         Me.EntregaActivosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EntregaActivosToolStripMenuItem.Text = "Entregar Articulos"
+        '
+        'RegistrarArticulosToolStripMenuItem
+        '
+        Me.RegistrarArticulosToolStripMenuItem.Name = "RegistrarArticulosToolStripMenuItem"
+        Me.RegistrarArticulosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RegistrarArticulosToolStripMenuItem.Text = "Registrar Articulos"
         '
         'ToolStrip
         '
@@ -304,11 +311,11 @@ Partial Class FrmPrincipal
         Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(119, 17)
         Me.ToolStripStatusLabel3.Text = "ToolStripStatusLabel3"
         '
-        'RegistrarArticulosToolStripMenuItem
+        'DescargosArticulosToolStripMenuItem
         '
-        Me.RegistrarArticulosToolStripMenuItem.Name = "RegistrarArticulosToolStripMenuItem"
-        Me.RegistrarArticulosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RegistrarArticulosToolStripMenuItem.Text = "Registrar Articulos"
+        Me.DescargosArticulosToolStripMenuItem.Name = "DescargosArticulosToolStripMenuItem"
+        Me.DescargosArticulosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DescargosArticulosToolStripMenuItem.Text = "Descargos Articulos"
         '
         'FrmPrincipal
         '
@@ -367,4 +374,5 @@ Partial Class FrmPrincipal
     Friend WithEvents ActivosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EntregaActivosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistrarArticulosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DescargosArticulosToolStripMenuItem As ToolStripMenuItem
 End Class

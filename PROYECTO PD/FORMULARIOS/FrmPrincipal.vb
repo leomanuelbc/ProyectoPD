@@ -50,4 +50,12 @@ Public Class FrmPrincipal
     Private Sub RegistrarArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarArticulosToolStripMenuItem.Click
         frmArticulos.Show()
     End Sub
+
+    Private Sub DescargosArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescargosArticulosToolStripMenuItem.Click
+        If UCase(Tipousuario) = "ADMINISTRADOR" Then
+            frmDescargosActivos.Show()
+        Else
+            MsgBox("No Tiene Los Privilegios Para el Modulo Correspondiente", vbInformation, "Operacion Cancelada")
+        End If
+    End Sub
 End Class

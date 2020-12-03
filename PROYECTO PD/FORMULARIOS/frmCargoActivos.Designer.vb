@@ -123,7 +123,7 @@ Partial Class frmCargoActivos
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.dgvCargosActivos)
-        Me.Panel1.Location = New System.Drawing.Point(12, 188)
+        Me.Panel1.Location = New System.Drawing.Point(12, 186)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(854, 289)
         Me.Panel1.TabIndex = 91

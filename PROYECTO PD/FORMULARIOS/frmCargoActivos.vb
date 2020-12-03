@@ -129,12 +129,13 @@ Public Class frmCargoActivos
     End Sub
     Sub llenarDatos()
         Dim sql As String
-        sql = "SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,
-                      Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Articulos.CodigoA,Articulos.EstadoArticulo,
+        sql = "SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,CargoActivo.EstaadoArticulo,
+                      Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Articulos.CodigoA,
                       Empleados.Nombre,Empleados.Identidad,Empleados.IdEmpleado,Departamentos.NombreD 
                       From Articulos INNER JOIN CargoActivos ON Articulos.IdArticulo = CargoActivos.IdArticulo
                                INNER JOIN Empleados ON CargoActivos.IdEmpleado = Empleados.IdEmpleado
-                               INNER JOIN Departamentos ON empleados.IdDepartamento = Departamentos.IdDepartamento"
+                               INNER JOIN Departamentos ON empleados.IdDepartamento = Departamentos.IdDepartamento
+                                WHERE CargoActivos.EstadoArticulo <> 'ELIMINADO'"
         Try
             Dim tabla As New DataTable
             adaptador = New SqlDataAdapter(sql, obtenerconexion)
