@@ -92,4 +92,8 @@ Public Class frmBusquedaArticulos
         frmCargoActivos.txtcodigo.Text = CStr(dgvArticulos.Item("CodigoA", dgvArticulos.CurrentCell.RowIndex).Value)
         Me.Close()
     End Sub
+
+    Private Sub rbCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles rbCodigo.CheckedChanged
+
+    End Sub
 End Class

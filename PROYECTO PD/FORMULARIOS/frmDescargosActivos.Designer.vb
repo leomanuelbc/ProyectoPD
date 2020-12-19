@@ -73,6 +73,7 @@ Partial Class frmDescargosActivos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtpFechaDescargo = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvActivosDescargados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -572,12 +573,25 @@ Partial Class frmDescargosActivos
         Me.Label3.TabIndex = 137
         Me.Label3.Text = "Fecha Descargo"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Adobe Gothic Std B", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(12, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(389, 34)
+        Me.Label4.TabIndex = 139
+        Me.Label4.Text = "Registro Descargos de Activos"
+        '
         'frmDescargosActivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Desktop
         Me.ClientSize = New System.Drawing.Size(877, 548)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.dtpFechaDescargo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -670,4 +684,5 @@ Partial Class frmDescargosActivos
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents IdArticulo As DataGridViewTextBoxColumn
     Friend WithEvents IdEmpleado As DataGridViewTextBoxColumn
+    Friend WithEvents Label4 As Label
 End Class

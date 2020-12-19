@@ -40,6 +40,7 @@ Partial Class frmBusquedaEmpleados
         Me.NombreD = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DIRECCION = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,7 +56,7 @@ Partial Class frmBusquedaEmpleados
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.dgvEmpleados)
-        Me.Panel1.Location = New System.Drawing.Point(12, 47)
+        Me.Panel1.Location = New System.Drawing.Point(11, 46)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(776, 391)
         Me.Panel1.TabIndex = 41
@@ -211,11 +212,25 @@ Partial Class frmBusquedaEmpleados
         Me.DIRECCION.ReadOnly = True
         Me.DIRECCION.Width = 110
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Adobe Gothic Std B", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(12, 9)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(273, 34)
+        Me.Label11.TabIndex = 44
+        Me.Label11.Text = "Busqueda Empleado"
+        '
         'frmBusquedaEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.Black
+        Me.ClientSize = New System.Drawing.Size(792, 441)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -226,6 +241,7 @@ Partial Class frmBusquedaEmpleados
         Me.Panel1.PerformLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -247,4 +263,5 @@ Partial Class frmBusquedaEmpleados
     Friend WithEvents NombreD As DataGridViewTextBoxColumn
     Friend WithEvents NombreP As DataGridViewTextBoxColumn
     Friend WithEvents DIRECCION As DataGridViewTextBoxColumn
+    Friend WithEvents Label11 As Label
 End Class

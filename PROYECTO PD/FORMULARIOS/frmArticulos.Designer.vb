@@ -64,6 +64,7 @@ Partial Class frmArticulos
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.dtpFechaCompra = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,7 +76,7 @@ Partial Class frmArticulos
         Me.btnMarcas.FlatAppearance.BorderSize = 8
         Me.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnMarcas.ForeColor = System.Drawing.Color.White
-        Me.btnMarcas.Location = New System.Drawing.Point(530, 115)
+        Me.btnMarcas.Location = New System.Drawing.Point(530, 104)
         Me.btnMarcas.Name = "btnMarcas"
         Me.btnMarcas.Size = New System.Drawing.Size(39, 21)
         Me.btnMarcas.TabIndex = 67
@@ -93,7 +94,7 @@ Partial Class frmArticulos
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.dgvArticulos)
-        Me.Panel1.Location = New System.Drawing.Point(5, 227)
+        Me.Panel1.Location = New System.Drawing.Point(5, 216)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(742, 289)
         Me.Panel1.TabIndex = 66
@@ -266,7 +267,7 @@ Partial Class frmArticulos
         Me.BtnCancelar.FlatAppearance.BorderSize = 8
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.Location = New System.Drawing.Point(626, 166)
+        Me.BtnCancelar.Location = New System.Drawing.Point(626, 155)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(77, 37)
         Me.BtnCancelar.TabIndex = 64
@@ -280,7 +281,7 @@ Partial Class frmArticulos
         Me.btnEliminar.FlatAppearance.BorderSize = 8
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Location = New System.Drawing.Point(670, 116)
+        Me.btnEliminar.Location = New System.Drawing.Point(670, 105)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(77, 37)
         Me.btnEliminar.TabIndex = 63
@@ -294,7 +295,7 @@ Partial Class frmArticulos
         Me.btnEditar.FlatAppearance.BorderSize = 8
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEditar.ForeColor = System.Drawing.Color.White
-        Me.btnEditar.Location = New System.Drawing.Point(587, 116)
+        Me.btnEditar.Location = New System.Drawing.Point(587, 105)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(77, 37)
         Me.btnEditar.TabIndex = 62
@@ -308,7 +309,7 @@ Partial Class frmArticulos
         Me.btnGuardar.FlatAppearance.BorderSize = 8
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(670, 58)
+        Me.btnGuardar.Location = New System.Drawing.Point(670, 47)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(77, 37)
         Me.btnGuardar.TabIndex = 61
@@ -323,7 +324,7 @@ Partial Class frmArticulos
         Me.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevo.Location = New System.Drawing.Point(587, 58)
+        Me.btnNuevo.Location = New System.Drawing.Point(587, 47)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(77, 37)
         Me.btnNuevo.TabIndex = 60
@@ -335,14 +336,14 @@ Partial Class frmArticulos
         Me.cboMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cboMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboMarca.FormattingEnabled = True
-        Me.cboMarca.Location = New System.Drawing.Point(359, 115)
+        Me.cboMarca.Location = New System.Drawing.Point(359, 104)
         Me.cboMarca.Name = "cboMarca"
         Me.cboMarca.Size = New System.Drawing.Size(156, 21)
         Me.cboMarca.TabIndex = 59
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(75, 149)
+        Me.txtDescripcion.Location = New System.Drawing.Point(75, 138)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(494, 62)
@@ -350,35 +351,35 @@ Partial Class frmArticulos
         '
         'txtSerie
         '
-        Me.txtSerie.Location = New System.Drawing.Point(434, 84)
+        Me.txtSerie.Location = New System.Drawing.Point(434, 73)
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.Size = New System.Drawing.Size(134, 20)
         Me.txtSerie.TabIndex = 55
         '
         'txtModelo
         '
-        Me.txtModelo.Location = New System.Drawing.Point(434, 58)
+        Me.txtModelo.Location = New System.Drawing.Point(434, 47)
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(134, 20)
         Me.txtModelo.TabIndex = 54
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(254, 86)
+        Me.txtcodigo.Location = New System.Drawing.Point(254, 75)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(117, 20)
         Me.txtcodigo.TabIndex = 53
         '
         'txtNombreA
         '
-        Me.txtNombreA.Location = New System.Drawing.Point(66, 58)
+        Me.txtNombreA.Location = New System.Drawing.Point(66, 47)
         Me.txtNombreA.Name = "txtNombreA"
         Me.txtNombreA.Size = New System.Drawing.Size(305, 20)
         Me.txtNombreA.TabIndex = 52
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(37, 175)
+        Me.txtId.Location = New System.Drawing.Point(37, 164)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(18, 20)
         Me.txtId.TabIndex = 51
@@ -387,7 +388,7 @@ Partial Class frmArticulos
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label7.Location = New System.Drawing.Point(316, 121)
+        Me.Label7.Location = New System.Drawing.Point(316, 110)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(37, 13)
         Me.Label7.TabIndex = 50
@@ -397,7 +398,7 @@ Partial Class frmArticulos
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label5.Location = New System.Drawing.Point(17, 149)
+        Me.Label5.Location = New System.Drawing.Point(17, 138)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 48
@@ -407,7 +408,7 @@ Partial Class frmArticulos
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(377, 89)
+        Me.Label6.Location = New System.Drawing.Point(377, 78)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(51, 13)
         Me.Label6.TabIndex = 47
@@ -417,7 +418,7 @@ Partial Class frmArticulos
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(386, 61)
+        Me.Label3.Location = New System.Drawing.Point(386, 50)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(42, 13)
         Me.Label3.TabIndex = 46
@@ -427,7 +428,7 @@ Partial Class frmArticulos
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(17, 89)
+        Me.Label4.Location = New System.Drawing.Point(17, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 45
@@ -437,7 +438,7 @@ Partial Class frmArticulos
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(208, 89)
+        Me.Label2.Location = New System.Drawing.Point(208, 78)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 44
@@ -447,7 +448,7 @@ Partial Class frmArticulos
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(17, 61)
+        Me.Label1.Location = New System.Drawing.Point(17, 50)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 43
@@ -455,7 +456,7 @@ Partial Class frmArticulos
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(66, 86)
+        Me.txtPrecio.Location = New System.Drawing.Point(66, 75)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(134, 20)
         Me.txtPrecio.TabIndex = 69
@@ -464,7 +465,7 @@ Partial Class frmArticulos
         '
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label11.Location = New System.Drawing.Point(15, 121)
+        Me.Label11.Location = New System.Drawing.Point(15, 110)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(76, 13)
         Me.Label11.TabIndex = 70
@@ -473,17 +474,30 @@ Partial Class frmArticulos
         'dtpFechaCompra
         '
         Me.dtpFechaCompra.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaCompra.Location = New System.Drawing.Point(100, 116)
+        Me.dtpFechaCompra.Location = New System.Drawing.Point(100, 105)
         Me.dtpFechaCompra.Name = "dtpFechaCompra"
         Me.dtpFechaCompra.Size = New System.Drawing.Size(180, 20)
         Me.dtpFechaCompra.TabIndex = 71
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Adobe Gothic Std B", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(12, 9)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(302, 34)
+        Me.Label8.TabIndex = 72
+        Me.Label8.Text = "REGISTROS ARTICULOS"
         '
         'frmArticulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Desktop
-        Me.ClientSize = New System.Drawing.Size(759, 528)
+        Me.ClientSize = New System.Drawing.Size(754, 512)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.dtpFechaCompra)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtPrecio)
@@ -559,4 +573,5 @@ Partial Class frmArticulos
     Friend WithEvents EstadoArticulo As DataGridViewTextBoxColumn
     Friend WithEvents FECHACOMPRA As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
 End Class

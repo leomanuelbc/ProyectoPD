@@ -202,6 +202,4 @@ Public Class frmDepartamentos
         txtdescripcion.Enabled = True
         txtnombre.Focus()
     End Sub
-
-
 End Class

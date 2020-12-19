@@ -41,6 +41,7 @@ Partial Class frmBusquedaArticulos
         Me.EstadoArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FECHACOMPRA = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,7 +57,7 @@ Partial Class frmBusquedaArticulos
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.dgvArticulos)
-        Me.Panel1.Location = New System.Drawing.Point(12, 39)
+        Me.Panel1.Location = New System.Drawing.Point(12, 46)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(776, 399)
         Me.Panel1.TabIndex = 67
@@ -222,12 +223,25 @@ Partial Class frmBusquedaArticulos
         Me.Descripcion.ReadOnly = True
         Me.Descripcion.Width = 170
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Adobe Gothic Std B", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(20, 9)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(257, 34)
+        Me.Label11.TabIndex = 68
+        Me.Label11.Text = "Busqueda Articulos"
+        '
         'frmBusquedaArticulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Desktop
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 453)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -238,6 +252,7 @@ Partial Class frmBusquedaArticulos
         Me.Panel1.PerformLayout()
         CType(Me.dgvArticulos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -260,4 +275,5 @@ Partial Class frmBusquedaArticulos
     Friend WithEvents EstadoArticulo As DataGridViewTextBoxColumn
     Friend WithEvents FECHACOMPRA As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Label11 As Label
 End Class

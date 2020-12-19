@@ -129,7 +129,7 @@ Public Class frmCargoActivos
     End Sub
     Sub llenarDatos()
         Dim sql As String
-        sql = "SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,CargoActivo.EstaadoArticulo,
+        sql = "SELECT CargoActivos.idCargo,CargoActivos.CodigoInventario,CargoActivos.FechaAsignacion,CargoActivos.Descripcion,CargoActivos.EstadoArticulo,
                       Articulos.NombreA,Articulos.IdArticulo,Articulos.PrecioCompra,Articulos.CodigoA,
                       Empleados.Nombre,Empleados.Identidad,Empleados.IdEmpleado,Departamentos.NombreD 
                       From Articulos INNER JOIN CargoActivos ON Articulos.IdArticulo = CargoActivos.IdArticulo

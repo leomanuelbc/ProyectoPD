@@ -64,6 +64,7 @@ Partial Class frmEmpleados
         Me.DIRECCION = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnDepartamento = New System.Windows.Forms.Button()
         Me.btnPuesto = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -487,12 +488,25 @@ Partial Class frmEmpleados
         Me.btnPuesto.Text = "..."
         Me.btnPuesto.UseVisualStyleBackColor = False
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Adobe Gothic Std B", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(18, 9)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(264, 34)
+        Me.Label11.TabIndex = 43
+        Me.Label11.Text = "Registro Empleados"
+        '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Desktop
         Me.ClientSize = New System.Drawing.Size(774, 488)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnPuesto)
         Me.Controls.Add(Me.btnDepartamento)
         Me.Controls.Add(Me.Panel1)
@@ -570,4 +584,5 @@ Partial Class frmEmpleados
     Friend WithEvents rbNombreEmpleado As RadioButton
     Friend WithEvents btnDepartamento As Button
     Friend WithEvents btnPuesto As Button
+    Friend WithEvents Label11 As Label
 End Class

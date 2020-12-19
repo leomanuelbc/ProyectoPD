@@ -40,6 +40,7 @@ Partial Class frmLogin
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -130,6 +131,17 @@ Partial Class frmLogin
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Sesión"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label3.Location = New System.Drawing.Point(113, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(146, 23)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "SISTEMA CBM"
+        '
         'frmLogin
         '
         Me.AcceptButton = Me.OK
@@ -138,6 +150,7 @@ Partial Class frmLogin
         Me.BackColor = System.Drawing.Color.Black
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(668, 421)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Cancel)
@@ -162,4 +175,5 @@ Partial Class frmLogin
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

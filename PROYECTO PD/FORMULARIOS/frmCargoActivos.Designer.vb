@@ -75,6 +75,7 @@ Partial Class frmCargoActivos
         Me.txtIdEmpleado = New System.Windows.Forms.TextBox()
         Me.txtIdArticulo = New System.Windows.Forms.TextBox()
         Me.btnEmpleados = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvCargosActivos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -82,7 +83,7 @@ Partial Class frmCargoActivos
         'dtpFechaEntrega
         '
         Me.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaEntrega.Location = New System.Drawing.Point(322, 83)
+        Me.dtpFechaEntrega.Location = New System.Drawing.Point(321, 116)
         Me.dtpFechaEntrega.Name = "dtpFechaEntrega"
         Me.dtpFechaEntrega.Size = New System.Drawing.Size(169, 20)
         Me.dtpFechaEntrega.TabIndex = 95
@@ -91,7 +92,7 @@ Partial Class frmCargoActivos
         '
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label11.Location = New System.Drawing.Point(245, 89)
+        Me.Label11.Location = New System.Drawing.Point(244, 122)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(77, 13)
         Me.Label11.TabIndex = 94
@@ -104,7 +105,7 @@ Partial Class frmCargoActivos
         Me.btnArticulo.FlatAppearance.BorderSize = 8
         Me.btnArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnArticulo.ForeColor = System.Drawing.Color.White
-        Me.btnArticulo.Location = New System.Drawing.Point(182, 24)
+        Me.btnArticulo.Location = New System.Drawing.Point(181, 57)
         Me.btnArticulo.Name = "btnArticulo"
         Me.btnArticulo.Size = New System.Drawing.Size(39, 21)
         Me.btnArticulo.TabIndex = 92
@@ -123,7 +124,7 @@ Partial Class frmCargoActivos
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.dgvCargosActivos)
-        Me.Panel1.Location = New System.Drawing.Point(12, 186)
+        Me.Panel1.Location = New System.Drawing.Point(11, 219)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(854, 289)
         Me.Panel1.TabIndex = 91
@@ -332,7 +333,7 @@ Partial Class frmCargoActivos
         Me.BtnCancelar.FlatAppearance.BorderSize = 8
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.Location = New System.Drawing.Point(745, 133)
+        Me.BtnCancelar.Location = New System.Drawing.Point(744, 166)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(77, 37)
         Me.BtnCancelar.TabIndex = 90
@@ -346,7 +347,7 @@ Partial Class frmCargoActivos
         Me.btnEliminar.FlatAppearance.BorderSize = 8
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Location = New System.Drawing.Point(789, 83)
+        Me.btnEliminar.Location = New System.Drawing.Point(788, 116)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(77, 37)
         Me.btnEliminar.TabIndex = 89
@@ -360,7 +361,7 @@ Partial Class frmCargoActivos
         Me.btnEditar.FlatAppearance.BorderSize = 8
         Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEditar.ForeColor = System.Drawing.Color.White
-        Me.btnEditar.Location = New System.Drawing.Point(706, 83)
+        Me.btnEditar.Location = New System.Drawing.Point(705, 116)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(77, 37)
         Me.btnEditar.TabIndex = 88
@@ -374,7 +375,7 @@ Partial Class frmCargoActivos
         Me.btnGuardar.FlatAppearance.BorderSize = 8
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(789, 25)
+        Me.btnGuardar.Location = New System.Drawing.Point(788, 58)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(77, 37)
         Me.btnGuardar.TabIndex = 87
@@ -389,7 +390,7 @@ Partial Class frmCargoActivos
         Me.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevo.Location = New System.Drawing.Point(706, 25)
+        Me.btnNuevo.Location = New System.Drawing.Point(705, 58)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(77, 37)
         Me.btnNuevo.TabIndex = 86
@@ -402,14 +403,14 @@ Partial Class frmCargoActivos
         Me.cboEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboEstado.FormattingEnabled = True
         Me.cboEstado.Items.AddRange(New Object() {"Nuevo", "Usado"})
-        Me.cboEstado.Location = New System.Drawing.Point(577, 82)
+        Me.cboEstado.Location = New System.Drawing.Point(576, 115)
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.Size = New System.Drawing.Size(114, 21)
         Me.cboEstado.TabIndex = 85
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(79, 112)
+        Me.txtDescripcion.Location = New System.Drawing.Point(78, 145)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(612, 58)
@@ -417,7 +418,7 @@ Partial Class frmCargoActivos
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(577, 24)
+        Me.txtPrecio.Location = New System.Drawing.Point(576, 57)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.ReadOnly = True
         Me.txtPrecio.Size = New System.Drawing.Size(114, 20)
@@ -425,21 +426,21 @@ Partial Class frmCargoActivos
         '
         'txtCodigoInventario
         '
-        Me.txtCodigoInventario.Location = New System.Drawing.Point(79, 83)
+        Me.txtCodigoInventario.Location = New System.Drawing.Point(78, 116)
         Me.txtCodigoInventario.Name = "txtCodigoInventario"
         Me.txtCodigoInventario.Size = New System.Drawing.Size(142, 20)
         Me.txtCodigoInventario.TabIndex = 82
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(79, 25)
+        Me.txtcodigo.Location = New System.Drawing.Point(78, 58)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(97, 20)
         Me.txtcodigo.TabIndex = 81
         '
         'txtNombreA
         '
-        Me.txtNombreA.Location = New System.Drawing.Point(322, 24)
+        Me.txtNombreA.Location = New System.Drawing.Point(321, 57)
         Me.txtNombreA.Name = "txtNombreA"
         Me.txtNombreA.ReadOnly = True
         Me.txtNombreA.Size = New System.Drawing.Size(169, 20)
@@ -447,7 +448,7 @@ Partial Class frmCargoActivos
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(693, 83)
+        Me.txtId.Location = New System.Drawing.Point(692, 116)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(18, 20)
         Me.txtId.TabIndex = 79
@@ -458,7 +459,7 @@ Partial Class frmCargoActivos
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.SystemColors.Desktop
         Me.Label7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label7.Location = New System.Drawing.Point(514, 83)
+        Me.Label7.Location = New System.Drawing.Point(513, 116)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(57, 26)
         Me.Label7.TabIndex = 78
@@ -468,7 +469,7 @@ Partial Class frmCargoActivos
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label5.Location = New System.Drawing.Point(21, 115)
+        Me.Label5.Location = New System.Drawing.Point(20, 148)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 77
@@ -478,7 +479,7 @@ Partial Class frmCargoActivos
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(531, 28)
+        Me.Label6.Location = New System.Drawing.Point(530, 61)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(40, 13)
         Me.Label6.TabIndex = 76
@@ -488,7 +489,7 @@ Partial Class frmCargoActivos
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(19, 80)
+        Me.Label3.Location = New System.Drawing.Point(18, 113)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 26)
         Me.Label3.TabIndex = 75
@@ -498,7 +499,7 @@ Partial Class frmCargoActivos
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(33, 28)
+        Me.Label2.Location = New System.Drawing.Point(32, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 73
@@ -508,7 +509,7 @@ Partial Class frmCargoActivos
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(239, 27)
+        Me.Label1.Location = New System.Drawing.Point(238, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(82, 13)
         Me.Label1.TabIndex = 72
@@ -518,7 +519,7 @@ Partial Class frmCargoActivos
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label8.Location = New System.Drawing.Point(7, 54)
+        Me.Label8.Location = New System.Drawing.Point(6, 87)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(66, 13)
         Me.Label8.TabIndex = 96
@@ -528,7 +529,7 @@ Partial Class frmCargoActivos
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label12.Location = New System.Drawing.Point(227, 56)
+        Me.Label12.Location = New System.Drawing.Point(226, 89)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(94, 13)
         Me.Label12.TabIndex = 97
@@ -536,14 +537,14 @@ Partial Class frmCargoActivos
         '
         'txtIdentidad
         '
-        Me.txtIdentidad.Location = New System.Drawing.Point(79, 54)
+        Me.txtIdentidad.Location = New System.Drawing.Point(78, 87)
         Me.txtIdentidad.Name = "txtIdentidad"
         Me.txtIdentidad.Size = New System.Drawing.Size(97, 20)
         Me.txtIdentidad.TabIndex = 98
         '
         'txtNombreE
         '
-        Me.txtNombreE.Location = New System.Drawing.Point(322, 54)
+        Me.txtNombreE.Location = New System.Drawing.Point(321, 87)
         Me.txtNombreE.Name = "txtNombreE"
         Me.txtNombreE.ReadOnly = True
         Me.txtNombreE.Size = New System.Drawing.Size(169, 20)
@@ -553,7 +554,7 @@ Partial Class frmCargoActivos
         '
         Me.Label13.AutoSize = True
         Me.Label13.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label13.Location = New System.Drawing.Point(497, 57)
+        Me.Label13.Location = New System.Drawing.Point(496, 90)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(74, 13)
         Me.Label13.TabIndex = 100
@@ -561,7 +562,7 @@ Partial Class frmCargoActivos
         '
         'txtDepartamento
         '
-        Me.txtDepartamento.Location = New System.Drawing.Point(577, 54)
+        Me.txtDepartamento.Location = New System.Drawing.Point(576, 87)
         Me.txtDepartamento.Name = "txtDepartamento"
         Me.txtDepartamento.ReadOnly = True
         Me.txtDepartamento.Size = New System.Drawing.Size(114, 20)
@@ -569,7 +570,7 @@ Partial Class frmCargoActivos
         '
         'txtIdEmpleado
         '
-        Me.txtIdEmpleado.Location = New System.Drawing.Point(697, 54)
+        Me.txtIdEmpleado.Location = New System.Drawing.Point(696, 87)
         Me.txtIdEmpleado.Name = "txtIdEmpleado"
         Me.txtIdEmpleado.Size = New System.Drawing.Size(22, 20)
         Me.txtIdEmpleado.TabIndex = 102
@@ -577,7 +578,7 @@ Partial Class frmCargoActivos
         '
         'txtIdArticulo
         '
-        Me.txtIdArticulo.Location = New System.Drawing.Point(697, 21)
+        Me.txtIdArticulo.Location = New System.Drawing.Point(696, 54)
         Me.txtIdArticulo.Name = "txtIdArticulo"
         Me.txtIdArticulo.Size = New System.Drawing.Size(22, 20)
         Me.txtIdArticulo.TabIndex = 103
@@ -590,19 +591,32 @@ Partial Class frmCargoActivos
         Me.btnEmpleados.FlatAppearance.BorderSize = 8
         Me.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEmpleados.ForeColor = System.Drawing.Color.White
-        Me.btnEmpleados.Location = New System.Drawing.Point(182, 53)
+        Me.btnEmpleados.Location = New System.Drawing.Point(181, 86)
         Me.btnEmpleados.Name = "btnEmpleados"
         Me.btnEmpleados.Size = New System.Drawing.Size(39, 21)
         Me.btnEmpleados.TabIndex = 104
         Me.btnEmpleados.Text = "..."
         Me.btnEmpleados.UseVisualStyleBackColor = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Adobe Gothic Std B", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(17, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(245, 34)
+        Me.Label4.TabIndex = 105
+        Me.Label4.Text = "Asignacion Activo "
+        '
         'frmCargoActivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Desktop
-        Me.ClientSize = New System.Drawing.Size(878, 487)
+        Me.ClientSize = New System.Drawing.Size(871, 516)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnEmpleados)
         Me.Controls.Add(Me.txtIdArticulo)
         Me.Controls.Add(Me.txtIdEmpleado)
@@ -697,4 +711,5 @@ Partial Class frmCargoActivos
     Friend WithEvents CodigoA As DataGridViewTextBoxColumn
     Friend WithEvents IdEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents EstadoArticulo As DataGridViewTextBoxColumn
+    Friend WithEvents Label4 As Label
 End Class
